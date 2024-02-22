@@ -1,12 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        colorsPrimary: '#1fc7d4',
+                        colorsSecondary: '#a881fc',
+                        colorWhite: '#f4eef4',
+                        colorsTertiary: '#b7acd1',
+                        bgHeaderStart: '#1d162f',
+                        bgHeaderEnd: '1e1733',
+                        secondBgHeaderStart: '#0a080f',
+                        secondBgHeaderEnd: '#201335',
+                        bgLGCardStart: '#313d5c',
+                        bgLGCardEnd: '#3d2a54',
+                        bgCommunityStart: '#7645d9',
+                        bgCommunityStart: '#5222b2',
+                        bgFooterNav: '#27262c',
+                    },
+                    fontSize: {
+                        title88: '88px',
+                        title32: '32px',
+                        title40: '40px',
+                    },
+                    borderRadius: {
+                        round24: '24px',
+                    },
+                    padding: {
+                        pdCard: '48px 24px 24px',
+                    },
+                    fontFamily: {
+                        display: ["Roboto", "sans-serif"],
+                    },
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    
+
+<body class=" flex justify-center items-center bg-black">
+    <div class="container bg-black w-full">
+        <div class="container1 px-[16px] flex justify-center items-center">
+            <div class="container2 w-[1168px] h-fit flex flex-col justify-center items-center">
+                <svg class="mb-6" viewBox="0 0 48 48" height="48px" width="48px" mb="24px" color="text"
+                    xmlns="http://www.w3.org/2000/svg" class="sc-grXZZQ hGmpbc">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M14.9024 0C10.8947 0 7.87179 3.60289 8.60749 7.50271L10.3484 16.7306C4.45101 19.3061 0 23.7533 0 29.3333V32.7273C0 37.3405 3.08306 41.2029 7.39317 43.8102C11.7369 46.4379 17.6132 48 24 48C30.3868 48 36.2631 46.4379 40.6068 43.8102C44.9169 41.2029 48 37.3405 48 32.7273V29.3333C48 23.7236 43.5028 19.2593 37.5552 16.6889L39.2882 7.50271C40.0239 3.6029 37.001 0 32.9933 0C29.4567 0 26.5896 2.83809 26.5896 6.33904V14.147C25.7386 14.0899 24.8746 14.0606 24 14.0606C23.0897 14.0606 22.1908 14.0923 21.3061 14.1541V6.33904C21.3061 2.83809 18.4391 0 14.9024 0ZM17.8776 28.3637C17.8776 30.372 16.7811 32 15.4286 32C14.0761 32 12.9796 30.372 12.9796 28.3637C12.9796 26.3554 14.0761 24.7273 15.4286 24.7273C16.7811 24.7273 17.8776 26.3554 17.8776 28.3637ZM34.7757 28.3637C34.7757 30.372 33.6792 32 32.3267 32C30.9742 32 29.8777 30.372 29.8777 28.3637C29.8777 26.3554 30.9742 24.7273 32.3267 24.7273C33.6792 24.7273 34.7757 26.3554 34.7757 28.3637Z"
+                        fill="url(#paint0_linear)"></path>
+                    <defs>
+                        <linearGradient id="paint0_linear" x1="24" y1="0" x2="24" y2="48"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#7645D9"></stop>
+                            <stop offset="1" stop-color="#5121B1"></stop>
+                        </linearGradient>
+                    </defs>
+                </svg>
+
+                <div class="text-white text-title40">Discover the Ecosystem</div>
+
+                <div
+                    class="card bg-gradient-to-r from-bgLGCardStart to-bgLGCardEnd w-full h-[417px] mt-[48px] pt-[48px] px-[24px] pb-[24px] rounded-3xl">
+                    <div class="container flex gap-x-8">
+                        <img class="ml-[-72px]" src="../assets/img/trade-bunny.png" width="340" height="340" alt="">
+                        <div class="container grid grid-cols-5 gap-x-6 ">
+                            <div
+                                class="content text-colorsSecondary text-title32 font-semibold pl-[12px] mb-[24px] col-span-5">
+                                Trade</div>
+                            <div class="content flex flex-col justify-between gap-y-3 p-[12px]">
+                                <div class=" block relative">
+                                    <img src="../assets/img/trade-swap-purple.png" width="108" height="108" alt=""
+                                        class="default">
+                                    <!-- <img src="../assets/img/trade-swap.png" wdith="108" height="108" alt=""
+                                        class="hover:absolute hover:top-0 hover:left-0 hover:opacity-0 hover:z-[2]"> -->
+
+                                </div>
+                                <div class="text-white">
+                                    <p class="text-xl">Swap</p>
+                                    <p class="text-sm">Trade crypto instantly across multiple chains</p>
+                                </div>
+                                <a href=" #" class="text-white">Trade Now</a>
+                            </div>
+                            <div class="content flex flex-col justify-between gap-y-3 p-[12px]">
+                                <img src="../assets/img/trade-liquidity-purple.png" width="108" height="108" alt=""
+                                    class="default">
+                                <!-- <img src="../assets/img/trade-swap.png" wdith="108" height="108" alt="" class="hover"> -->
+                                <div class="text-white">
+                                    <p class="text-xl">Liquidity</p>
+                                    <p class="text-sm">Fund liquidity pools, earn trading fees</p>
+                                </div>
+                                <a href=" #" class="text-white">Add Now</a>
+                            </div>
+                            <div class="content flex flex-col justify-between gap-y-3 p-[12px]">
+                                <img src="../assets/img/trade-bridge-purple.png" width="108" height="108" alt=""
+                                    class="default">
+                                <!-- <img src="../assets/img/trade-swap.png" wdith="108" height="108" alt="" class="hover"> -->
+                                <div class="text-white">
+                                    <p class="text-xl">Bridge</p>
+                                    <p class="text-sm">Fund liquidity pools, earn trading fees</p>
+                                </div>
+                                <a href=" #" class="text-white">Bridge Now</a>
+                            </div>
+                            <div class="content flex flex-col justify-between gap-y-3 p-[12px]">
+                                <img src="../assets/img/trade-perpetual-purple.png" width="108" height="108" alt=""
+                                    class="default:">
+                                <!-- <img src="../assets/img/trade-swap.png" wdith="108" height="108" alt="" class="hover"> -->
+                                <div class="text-white">
+                                    <p class="text-xl">Perpetual</p>
+                                    <p class="text-sm">Trade endlessly without expiration date</p>
+                                </div>
+                                <a href=" #" class="text-white">Trade Now</a>
+                            </div>
+                            <div class="content flex flex-col justify-between gap-y-3 p-[12px]">
+                                <img src="../assets/img/trade-buy-crypto-purple.png" width="108" height="108" alt=""
+                                    class="default">
+                                <!-- <img src="../assets/img/trade-swap.png" wdith="108" height="108" alt="" class="hover"> -->
+                                <div class="text-white">
+                                    <p class="text-xl">Buy Crypto</p>
+                                    <p class="text-sm">Buy crypto with your preferred currency and payment method</p>
+                                </div>
+                                <a href=" #" class="text-white">Buy Now</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="card bg-gradient-to-r from-bgLGCardStart to-bgLGCardEnd w-full h-[417px] mt-[48px] pt-[48px] px-[24px] pb-[24px] rounded-3xl">
+                    <div class="container flex gap-x-8">
+
+                        <div class="container grid grid-cols-5 gap-x-6 ">
+                            <div
+                                class="content text-colorsSecondary text-title32 font-semibold pl-[12px] mb-[24px] col-span-5">
+                                Trade</div>
+                            <div class="content flex flex-col justify-between gap-y-3 p-[12px]">
+                                <img src="../assets/img/trade-swap-purple.png" width="108" height="108" alt=""
+                                    class="default">
+                                <!-- <img src="../assets/img/trade-swap.png" wdith="108" height="108" alt="" class="hover"> -->
+                                <div class="text-white">
+                                    <p>Swap</p>
+                                    <p>Trade crypto instantly across multiple chains</p>
+                                </div>
+                                <a href=" #" class="text-white">Trade now</a>
+                            </div>
+                            <div class="content flex flex-col justify-between gap-y-3 p-[12px]">
+                                <img src="../assets/img/trade-swap-purple.png" width="108" height="108" alt=""
+                                    class="default">
+                                <!-- <img src="../assets/img/trade-swap.png" wdith="108" height="108" alt="" class="hover"> -->
+                                <div class="text-white">
+                                    <p>Swap</p>
+                                    <p>Trade crypto instantly across multiple chains</p>
+                                </div>
+                                <a href=" #" class="text-white">Trade now</a>
+                            </div>
+                            <div class="content flex flex-col justify-between gap-y-3 p-[12px]">
+                                <img src="../assets/img/trade-swap-purple.png" width="108" height="108" alt=""
+                                    class="default">
+                                <!-- <img src="../assets/img/trade-swap.png" wdith="108" height="108" alt="" class="hover"> -->
+                                <div class="text-white">
+                                    <p>Swap</p>
+                                    <p>Trade crypto instantly across multiple chains</p>
+                                </div>
+                                <a href=" #" class="text-white">Trade now</a>
+                            </div>
+                            <div class="content flex flex-col justify-between gap-y-3 p-[12px]">
+                                <img src="../assets/img/trade-swap-purple.png" width="108" height="108" alt=""
+                                    class="default">
+                                <!-- <img src="../assets/img/trade-swap.png" wdith="108" height="108" alt="" class="hover"> -->
+                                <div class="text-white">
+                                    <p>Swap</p>
+                                    <p>Trade crypto instantly across multiple chains</p>
+                                </div>
+                                <a href=" #" class="text-white">Trade now</a>
+                            </div>
+                            <div class="content flex flex-col justify-between gap-y-3 p-[12px]">
+                                <img src="../assets/img/trade-swap-purple.png" width="108" height="108" alt=""
+                                    class="default">
+                                <!-- <img src="../assets/img/trade-swap.png" wdith="108" height="108" alt="" class="hover"> -->
+                                <div class="text-white">
+                                    <p>Swap</p>
+                                    <p>Trade crypto instantly across multiple chains</p>
+                                </div>
+                                <a href=" #" class="text-white">Trade now</a>
+                            </div>
+
+                        </div>
+                        <img class="mr-[-72px]" src="../assets/img/earn-bunny.png" width="296" height="360" alt="">
+                    </div>
+                </div>
+                <div
+                    class="card bg-gradient-to-r from-bgLGCardStart to-bgLGCardEnd w-full h-[417px] mt-[48px] pt-[48px] px-[24px] pb-[24px] rounded-3xl">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
+
 </html>
