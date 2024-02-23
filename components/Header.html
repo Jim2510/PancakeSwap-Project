@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -22,6 +22,7 @@
           extend: {
             colors: {
               colorsPrimary: "#1fc7d4",
+              colorsPrimaryHover: "#228F99",
               colorsSecondary: "#a881fc",
               colorWhite: "#f4eef4",
               colorsTertiary: "#b7acd1",
@@ -36,6 +37,11 @@
               bgFooterNav: "#27262c",
               textNav: "#aba1c3",
               navLinkHover: "#353547",
+              textIconHover: "#867E98",
+              warningStart: "#7D4FD2",
+              warningEnd: "#4A2387",
+              warningTransparent: "rgba(39, 38, 44, 0.4)",
+              warningText: "#FFB237",
             },
             fontSize: {
               title88: "88px",
@@ -49,7 +55,7 @@
               pdCard: "48px 24px 24px",
             },
             fontFamily: {
-              display: ["Roboto", "sans-serif"],
+              display: ["Kanit", "sans-serif"],
             },
           },
         },
@@ -57,8 +63,29 @@
     </script>
   </head>
   <body
-    class="bg-colorsSecondary flex flex-col items-center w-[100vw] h-[100vh] font-display"
+    class="bg-bgHeaderStart flex flex-col items-center w-[100vw] h-[100vh] font-display"
   >
+    <div
+    id="warning"
+      class="w-[100%] h-[70px] bg-gradient-to-b from-purple-600 to-purple-900 flex justify-center items-center"
+    >
+    <img src="../assets/img/phishing-warning-bunny.webp" alt="warning bunny" class="w-[92px]">
+      <div
+        class="w-[60%] bg-warningTransparent h-[80%] rounded-2xl flex items-center p-[8px] text-[14px]"
+      >
+        <p class="text-warningText font-semibold">
+          PHISHING WARNING:
+          <span class="font-normal text-[#B9BBC2]"> please make sure you're visiting</span>
+          <span class="text-white">https://pancakeswap.finance</span>
+          <span class="font-normal text-[#B9BBC2]">- check the URL carefully.</span>
+        </p>
+        <div class="absolute right-0 w-[40px] text-white cursor-pointer" onclick="hiddenWarning()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
     <div
       class="w-[100vw] bg-bgFooterNav h-[56px] flex animate__animated animate__fadeInDown"
     >
@@ -122,19 +149,45 @@
                 class="hover:bg-navLinkHover px-[16px] h-[48px] flex items-center justify-between"
               >
                 <p>Perpetual</p>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
-                    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-                  </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-box-arrow-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"
+                  />
+                </svg>
               </div>
               <div
                 class="hover:bg-navLinkHover px-[16px] h-[48px] flex items-center justify-between"
               >
                 <p>Bridge</p>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
-                    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-                  </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-box-arrow-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"
+                  />
+                </svg>
               </div>
               <div
                 class="hover:bg-navLinkHover px-[16px] h-[48px] flex items-center"
@@ -210,10 +263,23 @@
                 class="hover:bg-navLinkHover hover:rounded-t-2xl px-[16px] h-[48px] flex items-center justify-between"
               >
                 <p>Gaming Marketplace</p>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
-                    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-                  </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-box-arrow-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"
+                  />
+                </svg>
               </div>
               <div
                 class="hover:bg-navLinkHover px-[16px] h-[48px] flex items-center"
@@ -233,8 +299,8 @@
             </div>
           </div>
           <div
-          onmouseover="showNft()"
-          onmouseout="hiddenNft()"
+            onmouseover="showNft()"
+            onmouseout="hiddenNft()"
             class="hover:bg-slate-500 h-[90%] hover:bg-opacity-30 font-normal text-textNav text-base px-[16px] cursor-pointer flex items-center hover:rounded-2xl hover:bg-navLinkHover"
           >
             <p>NFT</p>
@@ -242,14 +308,26 @@
               id="nftMenu"
               class="w-[280px] bg-bgFooterNav absolute top-[53px] rounded-2xl left-[410px] flex-col text-textNav hidden border-y-[1px] border-gray-700 z-10"
             >
-            <div class="hover:bg-navLinkHover hover:rounded-t-2xl px-[16px] h-[48px] flex items-center"><p>Overview</p></div>
-            <div class="hover:bg-navLinkHover px-[16px] h-[48px] flex items-center"><p>Collection</p></div>
-            <div class="hover:bg-navLinkHover hover:rounded-b-2xl px-[16px] h-[48px] flex items-center"><p>Activity</p></div>
+              <div
+                class="hover:bg-navLinkHover hover:rounded-t-2xl px-[16px] h-[48px] flex items-center"
+              >
+                <p>Overview</p>
+              </div>
+              <div
+                class="hover:bg-navLinkHover px-[16px] h-[48px] flex items-center"
+              >
+                <p>Collection</p>
+              </div>
+              <div
+                class="hover:bg-navLinkHover hover:rounded-b-2xl px-[16px] h-[48px] flex items-center"
+              >
+                <p>Activity</p>
+              </div>
             </div>
           </div>
           <div
-          onmouseover="showDot()"
-          onmouseout="hiddenDot()"
+            onmouseover="showDot()"
+            onmouseout="hiddenDot()"
             class="hover:bg-slate-500 h-[90%] hover:bg-opacity-30 font-normal text-textNav text-base px-[16px] cursor-pointer flex items-center hover:rounded-2xl hover:bg-navLinkHover"
           >
             <p>
@@ -265,27 +343,82 @@
                   d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
                 />
               </svg>
-              <div
+            </p>
+
+            <div
               id="dotMenu"
               class="w-[280px] bg-bgFooterNav absolute top-[53px] rounded-2xl left-[470px] flex-col text-textNav hidden border-y-[1px] border-gray-700 z-10"
             >
-            <div class="hover:bg-navLinkHover hover:rounded-t-2xl px-[16px] h-[48px] flex items-center"><p>Info</p></div>
-            <div class="hover:bg-navLinkHover px-[16px] h-[48px] flex items-center"><p>IFO</p></div>
-            <div class="hover:bg-navLinkHover px-[16px] h-[48px] flex items-center"><p>Affiliate Program</p></div>
-            <div class="hover:bg-navLinkHover px-[16px] h-[48px] flex items-center"><p>Voting</p></div>
-            <div class="hover:bg-navLinkHover px-[16px] h-[48px] flex items-center border-y-[1px] border-gray-700 border-opacity-50"><p>Leaderboard</p></div>
-            <div class="hover:bg-navLinkHover px-[16px] h-[48px] flex items-center justify-between"><p>Blog</p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
-                <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-              </svg>
-            </div>
-            <div class="hover:bg-navLinkHover hover:rounded-b-2xl px-[16px] h-[48px] flex items-center justify-between"><p>Docs</p> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
-                <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-              </svg>
-            </div>
+              <div
+                class="hover:bg-navLinkHover hover:rounded-t-2xl px-[16px] h-[48px] flex items-center"
+              >
+                <p>Info</p>
               </div>
-            </p>
+              <div
+                class="hover:bg-navLinkHover px-[16px] h-[48px] flex items-center"
+              >
+                <p>IFO</p>
+              </div>
+              <div
+                class="hover:bg-navLinkHover px-[16px] h-[48px] flex items-center"
+              >
+                <p>Affiliate Program</p>
+              </div>
+              <div
+                class="hover:bg-navLinkHover px-[16px] h-[48px] flex items-center"
+              >
+                <p>Voting</p>
+              </div>
+              <div
+                class="hover:bg-navLinkHover px-[16px] h-[48px] flex items-center border-y-[1px] border-gray-700 border-opacity-50"
+              >
+                <p>Leaderboard</p>
+              </div>
+              <div
+                class="hover:bg-navLinkHover px-[16px] h-[48px] flex items-center justify-between"
+              >
+                <p>Blog</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-box-arrow-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"
+                  />
+                </svg>
+              </div>
+              <div
+                class="hover:bg-navLinkHover hover:rounded-b-2xl px-[16px] h-[48px] flex items-center justify-between"
+              >
+                <p>Docs</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-box-arrow-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"
+                  />
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -337,7 +470,7 @@
             <p class="font-bold">$2.890</p>
           </div>
           <div
-            class="h-[90%] font-normal text-textNav text-base px-[14px] cursor-pointer flex items-center"
+            class="h-[90%] font-normal text-textNav text-base hover:text-textIconHover transition-all ease-in-out delay-200 px-[14px] cursor-pointer flex items-center"
           >
             <p>
               <svg
@@ -345,7 +478,6 @@
                 width="20"
                 height="20"
                 fill="currentColor"
-                class="bi bi-globe2"
                 viewBox="0 0 16 16"
               >
                 <path
@@ -355,7 +487,7 @@
             </p>
           </div>
           <div
-            class="h-[90%] font-normal text-textNav text-base px-[14px] cursor-pointer flex items-center"
+            class="h-[90%] font-normal text-textNav text-base px-[14px] hover:text-textIconHover transition-all ease-in-out delay-200 cursor-pointer flex items-center"
           >
             <p>
               <svg
@@ -373,6 +505,7 @@
             </p>
           </div>
           <div
+            onclick="showBell()"
             class="h-[90%] font-normal text-textNav text-base px-[14px] cursor-pointer flex items-center"
           >
             <p>
@@ -389,6 +522,33 @@
                 />
               </svg>
             </p>
+            <!-- BELL -->
+            <div
+              id="bell"
+              class="p-[24px] w-[400px] h-[512px] justify-between items-center flex-col bg-bgFooterNav hidden absolute top-[53px] rounded-3xl left-[65%] text-textNav border-y-[1px] border-gray-700 z-10"
+            >
+              <div class="flex justify-center items-center mt-[40px]">
+                <img
+                  src="../assets/img/welcome-notification-bell.webp"
+                  alt=""
+                  class="w-[270px] h-[162px]"
+                />
+              </div>
+              <div class="flex items-center flex-col gap-[12px]">
+                <p class="text-center text-[24px] font-semibold text-white">
+                  Notifications From PancakeSwap
+                </p>
+                <p class="text-center">
+                  Get started with notifications from PancakeSwap. First
+                  authorize notifications by signing in your wallet
+                </p>
+                <button
+                  class="font-semibold w-[100%] px-[24px] bg-colorsPrimary h-[50px] text-black text-center mt-[24px] rounded-2xl hover:bg-colorsPrimaryHover transition-all ease-in-out delay-50"
+                >
+                  connect Wallet
+                </button>
+              </div>
+            </div>
           </div>
           <div
             class="text-white font-bold text-base pr-[14px] cursor-pointer flex items-center bg-navLinkHover rounded-full h-[32px] mr-[8px]"
@@ -415,7 +575,7 @@
             </svg>
           </div>
           <div
-            class="h-[32px] font-bold text-black text-base px-[16px] cursor-pointer flex items-center bg-colorsPrimary rounded-full"
+            class="h-[32px] font-bold text-black text-base px-[16px] cursor-pointer flex items-center bg-colorsPrimary rounded-full hover:bg-colorsPrimaryHover transition-all ease-in-out delay-50"
           >
             <p>connect wallet</p>
           </div>
