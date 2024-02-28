@@ -1,0 +1,13 @@
+    .custom-scrollbar::-webkit-scrollbar {
+    width: 8px; /* Cambia la larghezza della scrollbar */
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+    background: #27262c; /* Cambia il colore del track della scrollbar */
+    border-radius: 1rem;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #B8ADD2; /* Cambia il colore della thumb della scrollbar */
+    border-radius:  20px;
+    }
