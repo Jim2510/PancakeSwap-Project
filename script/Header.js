@@ -21,80 +21,44 @@ document.querySelectorAll(".buttonSlider").forEach(btn => {
         const cardKey = event.target.dataset.key;
         const obSlider = objSlider[cardKey];
 
-        const slider = document.querySelector(".slider");
+        const containerInfo = document.querySelector("#containerInfo");
         const logoTitle = document.querySelector(".logoTitle");
         const titleSlider = document.querySelector(".titleSlider");
         const btnSlider = document.querySelector(".btnSlider");
         document.querySelectorAll('.logoTitle').forEach(el => el.remove());
 
-        logoTitle.innerText = obSlider.logoName;
+        
         titleSlider.innerText = obSlider.title;
         btnSlider.innerText = obSlider.button;
+        logoTitle.innerHTML = obSlider.logoName;
 
-        slider.appendChild(btnSlider);
-        slider.appendChild(titleSlider);
-        slider.appendChild(logoTitle);
-        console.log(logoTitle);
+        containerInfo.appendChild(logoTitle);
+        containerInfo.appendChild(titleSlider);
+        containerInfo.appendChild(btnSlider);
+
+        console.log(logoTitle)
     })
 
 })
 
-const showTrade = () => {
-    document.querySelector("#tradeMenu").classList.toggle("hidden");
-    document.querySelector("#tradeMenu").classList.toggle("flex");
+const toggleMenu = (Id) => {
+    const menu = document.querySelector(Id);
+    menu.classList.toggle("hidden");
+    menu.classList.toggle("flex");
 }
 
-const hiddenTrade = () => {
-    document.querySelector("#tradeMenu").classList.toggle("hidden");
-    document.querySelector("#tradeMenu").classList.toggle("flex");
-}
-
-const showEarn = () => {
-    document.querySelector("#earnMenu").classList.toggle("hidden");
-    document.querySelector("#earnMenu").classList.toggle("flex");
-}
-
-const hiddenEarn = () => {
-    document.querySelector("#earnMenu").classList.toggle("hidden");
-    document.querySelector("#earnMenu").classList.toggle("flex");
-}
-
-const showGame = () => {
-    document.querySelector("#gameMenu").classList.toggle("hidden");
-    document.querySelector("#gameMenu").classList.toggle("flex");
-}
-
-const hiddenGame = () => {
-    document.querySelector("#gameMenu").classList.toggle("hidden");
-    document.querySelector("#gameMenu").classList.toggle("flex");
-}
-
-const showNft = () => {
-    document.querySelector("#nftMenu").classList.toggle("hidden");
-    document.querySelector("#nftMenu").classList.toggle("flex");
-}
-
-const hiddenNft = () => {
-    document.querySelector("#nftMenu").classList.toggle("hidden");
-    document.querySelector("#nftMenu").classList.toggle("flex");
-}
-
-const showDot = () => {
-    document.querySelector("#dotMenu").classList.toggle("hidden");
-    document.querySelector("#dotMenu").classList.toggle("flex");
-}
-
-const hiddenDot = () => {
-    document.querySelector("#dotMenu").classList.toggle("hidden");
-    document.querySelector("#dotMenu").classList.toggle("flex");
-}
-
-const showBell = () => {
-    document.querySelector("#bell").classList.toggle("hidden");
-    document.querySelector("#bell").classList.toggle("flex");
-}
-
-const hiddenWarning = () => {
-    document.querySelector("#warning").classList.toggle("hidden");
-    document.querySelector("#warning").classList.toggle("flex ");
-}
+const showTrade = () => toggleMenu("#tradeMenu");
+const hiddenTrade = () => toggleMenu("#tradeMenu");
+const showEarn = () => toggleMenu("#earnMenu");
+const hiddenEarn = () => toggleMenu("#earnMenu");
+const showGame = () => toggleMenu("#gameMenu");
+const hiddenGame = () => toggleMenu("#gameMenu");
+const showNft = () => toggleMenu("#nftMenu");
+const hiddenNft = () => toggleMenu("#nftMenu");
+const showDot = () => toggleMenu("#dotMenu");
+const hiddenDot = () => toggleMenu("#dotMenu");
+const showLang = () => toggleMenu("#languages");
+const hiddenLang = () => toggleMenu("#languages");
+const showBell = () => toggleMenu("#bell");
+const hiddenWarning = () => toggleMenu("#warning");
+const toggleSettings  = () => toggleMenu("#settings")
