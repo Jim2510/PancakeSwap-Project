@@ -44,6 +44,13 @@
             }
         }
     </script>
+    <style>
+        .coin-content {
+            background: rgb(59, 30, 98);
+            background: radial-gradient(circle, rgba(59, 30, 98, 1) 0%, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 1) 100%);
+
+        }
+    </style>
 </head>
 
 <body>
@@ -79,9 +86,10 @@
                                 Trade</div>
                             <div class="flex gap-x-6">
                                 <div data-key="swap"
-                                    class="content cursor-pointer flex flex-col flex-1 justify-between p-[12px]"
-                                    onmouseover="swapOver(swap)" onmouseout="swapOut(swap)">
+                                    class="content cursor-pointer flex flex-col flex-1 justify-between p-[12px] group">
                                     <img src="../assets/img/trade-swap-purple.png" width="108" height="108" alt=""
+                                        class="swap default absolute group-hover:opacity-0 transition-all ease-in-out delay-200">
+                                    <img src="../assets/img/trade-swap.png" width="108" height="108" alt=""
                                         class="swap default">
                                     <div>
                                         <div class="text-white text-xl font-bold mb-[8px]">Swap </div>
@@ -90,7 +98,10 @@
                                         </div>
                                     </div>
                                     <div class="flex">
-                                        <div class="font-bold text-[#B8ADD2]">Trade Now</div>
+                                        <div
+                                            class=" trade font-bold text-[#B8ADD2] group-hover:text-colorsPrimary transition-all ease-in-out delay-200">
+                                            Trade Now
+                                        </div>
                                         <svg viewBox="0 0 24 24" color="" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-white">
                                             <path
@@ -100,10 +111,11 @@
                                     </div>
                                 </div>
                                 <div data-key="liquidity"
-                                    class="content cursor-pointer flex flex-col flex-1 justify-between  p-[12px]"
-                                    onmouseover="liquidityOver(liquidity)" onmouseout="liquidityOut(liquidity)">
+                                    class="content cursor-pointer flex flex-col flex-1 justify-between p-[12px] group">
                                     <img src="../assets/img/trade-liquidity-purple.png" width="108" height="108" alt=""
-                                        class="liquidity default " id="liquidity">
+                                        class="liquidity default absolute group-hover:opacity-0 transition-all ease-in-out delay-200">
+                                    <img src="../assets/img/trade-liquidity.png" width="108" height="108" alt=""
+                                        class="liquidity default">
                                     <div>
                                         <div class="text-white text-xl font-bold mb-[8px]">Liquidity</div>
                                         <div class=" text-white text-sm font-medium">Fund liquidity pools, earn trading
@@ -111,7 +123,9 @@
                                         </div>
                                     </div>
                                     <div class="flex">
-                                        <div data-key="liquidity" class="font-bold text-[#B8ADD2]">Add Now</div>
+                                        <div data-key="liquidity"
+                                            class="trade font-bold text-[#B8ADD2] group-hover:text-colorsPrimary transition-all ease-in-out delay-200">
+                                            Add Now</div>
                                         <svg viewBox="0 0 24 24" color="" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-white">
                                             <path
@@ -120,8 +134,10 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="content cursor-pointer flex flex-col flex-1 justify-between p-[12px]">
+                                <div class="content cursor-pointer flex flex-col flex-1 justify-between p-[12px] group">
                                     <img src="../assets/img/trade-bridge-purple.png" width="108" height="108" alt=""
+                                        class="default absolute group-hover:opacity-0 transition-all ease-in-out delay-200">
+                                    <img src="../assets/img/trade-bridge.png" width="108" height="108" alt=""
                                         class="default">
                                     <div>
                                         <div class="text-white text-xl font-bold mb-[8px]">Bridge</div>
@@ -130,7 +146,9 @@
                                         </div>
                                     </div>
                                     <div class="flex">
-                                        <div class="font-bold text-[#B8ADD2]">Bridge Now</div>
+                                        <div
+                                            class="font-bold text-[#B8ADD2] group-hover:text-colorsPrimary transition-all ease-in-out delay-200">
+                                            Bridge Now</div>
                                         <svg viewBox="0 0 24 24" color="" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-white">
                                             <path
@@ -139,16 +157,20 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="content cursor-pointer flex flex-col flex-1 justify-between  p-[12px]">
+                                <div class="content cursor-pointer flex flex-col flex-1 justify-between p-[12px] group">
                                     <img src="../assets/img/trade-perpetual-purple.png" width="108" height="108" alt=""
-                                        class="default:">
+                                        class="default absolute group-hover:opacity-0 transition-all ease-in-out delay-200">
+                                    <img src="../assets/img/trade-perpetual.png" width="108" height="108" alt=""
+                                        class="default">
                                     <div>
                                         <div class="text-white text-xl mb-[8px] font-bold">Perpetual</div>
                                         <div class=" text-white text-sm font-medium">Trade endlessly without expiration
                                             date</div>
                                     </div>
                                     <div class="flex">
-                                        <div class="font-bold text-[#B8ADD2]">Trade Now</div>
+                                        <div
+                                            class="font-bold text-[#B8ADD2] group-hover:text-colorsPrimary transition-all ease-in-out delay-200">
+                                            Trade Now</div>
                                         <svg viewBox="0 0 24 24" color="" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-white">
                                             <path
@@ -158,8 +180,10 @@
                                     </div>
                                 </div>
                                 <div
-                                    class="content cursor-pointer flex flex-col flex-1 justify-between gap-y-2 p-[12px]">
+                                    class="content cursor-pointer flex flex-col flex-1 justify-between gap-y-2 p-[12px] group">
                                     <img src="../assets/img/trade-buy-crypto-purple.png" width="108" height="108" alt=""
+                                        class="default absolute group-hover:opacity-0 transition-all ease-in-out delay-200">
+                                    <img src="../assets/img/trade-buy-crypto.png" width="108" height="108" alt=""
                                         class="default">
                                     <div>
                                         <div class="text-white text-xl mb-[8px] font-bold">Buy Crypto</div>
@@ -168,7 +192,9 @@
                                             payment method</div>
                                     </div>
                                     <div class="flex">
-                                        <div class="font-bold text-[#B8ADD2]">Buy Now</div>
+                                        <div
+                                            class="font-bold text-[#B8ADD2] group-hover:text-colorsPrimary transition-all ease-in-out delay-200">
+                                            Buy Now</div>
                                         <svg viewBox="0 0 24 24" color="" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-white">
                                             <path
@@ -187,15 +213,19 @@
                             <div class=" text-colorsSecondary text-title32 font-extrabold pl-[12px] mb-[24px]">
                                 Earn</div>
                             <div class="flex gap-x-6">
-                                <div class="content cursor-pointer flex flex-col flex-1 justify-between  p-[12px]">
+                                <div class="content cursor-pointer flex flex-col flex-1 justify-between p-[12px] group">
                                     <img src="../assets/img/earn-farm-purple.png" width="108" height="108" alt=""
+                                        class="default absolute group-hover:opacity-0 transition-all ease-in-out delay-200">
+                                    <img src="../assets/img/earn-farm.png" width="108" height="108" alt=""
                                         class="default">
                                     <div>
                                         <div class="text-white text-xl mb-[8px] font-bold">Farm</div>
                                         <div class=" text-white text-sm font-medium">Stake LP tokens, harvest CAKE</div>
                                     </div>
                                     <div class="flex">
-                                        <div class="font-bold text-[#B8ADD2]">Stake Now</div>
+                                        <div
+                                            class="font-bold text-[#B8ADD2] group-hover:text-colorsPrimary transition-all ease-in-out delay-200">
+                                            Stake Now</div>
                                         <svg viewBox="0 0 24 24" color="" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-white">
                                             <path
@@ -204,8 +234,10 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="content cursor-pointer flex flex-col flex-1 justify-between p-[12px]">
+                                <div class="content cursor-pointer flex flex-col flex-1 justify-between p-[12px] group">
                                     <img src="../assets/img/earn-pools-purple.png" width="108" height="108" alt=""
+                                        class="default absolute group-hover:opacity-0 transition-all ease-in-out delay-200">
+                                    <img src="../assets/img/earn-pools.png" width="108" height="108" alt=""
                                         class="default">
                                     <div>
                                         <div class="text-white text-xl mb-[8px] font-bold">Pools</div>
@@ -213,26 +245,9 @@
                                         </div>
                                     </div>
                                     <div class="flex">
-                                        <div class="font-bold text-[#B8ADD2]">Stake Now</div>
-                                        <svg viewBox="0 0 24 24" color="" width="20px"
-                                            xmlns="http://www.w3.org/2000/svg" class="fill-white">
-                                            <path
-                                                d="M9.29006 15.88L13.1701 12L9.29006 8.12001C8.90006 7.73001 8.90006 7.10001 9.29006 6.71001C9.68006 6.32001 10.3101 6.32001 10.7001 6.71001L15.2901 11.3C15.6801 11.69 15.6801 12.32 15.2901 12.71L10.7001 17.3C10.3101 17.69 9.68006 17.69 9.29006 17.3C8.91006 16.91 8.90006 16.27 9.29006 15.88Z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="content cursor-pointer flex flex-col flex-1 justify-between  p-[12px]">
-                                    <img src=" ../assets/img/earn-liquidity-staking-purple.png" width="108" height="108"
-                                        alt="" class="default">
-                                    <div>
-                                        <div class="text-white text-xl mb-[8px] font-bold">Liquid Staking</div>
-                                        <div class=" text-white text-sm font-medium">Earn rewards while retaining asset
-                                            flexibility
-                                        </div>
-                                    </div>
-                                    <div class="flex">
-                                        <div class="font-bold text-[#B8ADD2]">Add Now</div>
+                                        <div
+                                            class="font-bold text-[#B8ADD2] group-hover:text-colorsPrimary transition-all ease-in-out delay-200">
+                                            Stake Now</div>
                                         <svg viewBox="0 0 24 24" color="" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-white">
                                             <path
@@ -242,17 +257,22 @@
                                     </div>
                                 </div>
                                 <div
-                                    class="content cursor-pointer flex flex-col flex-1 justify-between gap-y-3 p-[12px]">
-                                    <img src="../assets/img/trade-liquidity-purple.png" width="108" height="108" alt=""
+                                    class="content cursor-pointer flex flex-col flex-1 justify-between  p-[12px] group">
+                                    <img src=" ../assets/img/earn-liquidity-staking-purple.png" width="108" height="108"
+                                        alt=""
+                                        class="default absolute group-hover:opacity-0 transition-all ease-in-out delay-200">
+                                    <img src=" ../assets/img/earn-liquidity-staking.png" width="108" height="108" alt=""
                                         class="default">
                                     <div>
-                                        <div class="text-white text-xl mb-[8px] font-bold">Simple Staking</div>
-                                        <div class="text-white text-sm font-medium">Earn rewards hassle-free with
-                                            single-sided
-                                            staking</div>
+                                        <div class="text-white text-xl mb-[8px] font-bold">Liquid Staking</div>
+                                        <div class=" text-white text-sm font-medium">Earn rewards while retaining asset
+                                            flexibility
+                                        </div>
                                     </div>
                                     <div class="flex">
-                                        <div class="font-bold text-[#B8ADD2]">Stake Now</div>
+                                        <div
+                                            class="font-bold text-[#B8ADD2] group-hover:text-colorsPrimary transition-all ease-in-out delay-200">
+                                            Add Now</div>
                                         <svg viewBox="0 0 24 24" color="" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-white">
                                             <path
@@ -261,8 +281,34 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="content cursor-pointer flex flex-col flex-1 justify-between  p-[12px]">
+                                <div
+                                    class="content cursor-pointer flex flex-col flex-1 justify-between gap-y-3 p-[12px] group">
+                                    <img src="../assets/img/trade-liquidity-purple.png" width="108" height="108" alt=""
+                                        class="default absolute group-hover:opacity-0 transition-all ease-in-out delay-200">
+                                    <img src="../assets/img/trade-liquidity.png" width="108" height="108" alt=""
+                                        class="default">
+                                    <div>
+                                        <div class="text-white text-xl mb-[8px] font-bold">Simple Staking</div>
+                                        <div class="text-white text-sm font-medium">Earn rewards hassle-free with
+                                            single-sided
+                                            staking</div>
+                                    </div>
+                                    <div class="flex">
+                                        <div
+                                            class="font-bold text-[#B8ADD2] group-hover:text-colorsPrimary transition-all ease-in-out delay-200">
+                                            Stake Now</div>
+                                        <svg viewBox="0 0 24 24" color="" width="20px"
+                                            xmlns="http://www.w3.org/2000/svg" class="fill-white">
+                                            <path
+                                                d="M9.29006 15.88L13.1701 12L9.29006 8.12001C8.90006 7.73001 8.90006 7.10001 9.29006 6.71001C9.68006 6.32001 10.3101 6.32001 10.7001 6.71001L15.2901 11.3C15.6801 11.69 15.6801 12.32 15.2901 12.71L10.7001 17.3C10.3101 17.69 9.68006 17.69 9.29006 17.3C8.91006 16.91 8.90006 16.27 9.29006 15.88Z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="content cursor-pointer flex flex-col flex-1 justify-between p-[12px] group">
                                     <img src="../assets/img/earn-pm-purple.png" width="108" height="108" alt=""
+                                        class="default absolute group-hover:opacity-0 transition-all ease-in-out delay-200">
+                                    <img src="../assets/img/earn-pm.png" width="108" height="108" alt=""
                                         class="default">
                                     <div>
                                         <div class="text-white text-xl mb-[8px] font-bold">Position Manager</div>
@@ -270,7 +316,9 @@
                                             liquidity</div>
                                     </div>
                                     <div class="flex">
-                                        <div class="font-bold text-[#B8ADD2]">Stake Now</div>
+                                        <div
+                                            class="font-bold text-[#B8ADD2] group-hover:text-colorsPrimary transition-all ease-in-out delay-200">
+                                            Stake Now</div>
                                         <svg viewBox="0 0 24 24" color="" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-white">
                                             <path
@@ -293,16 +341,21 @@
                                 Game & NFT</div>
                             <div class="flex gap-x-6">
                                 <div data-key="link"
-                                    class="content cursor-pointer flex flex-col flex-1 justify-between gap-y-6 p-[12px]">
+                                    class="content cursor-pointer flex flex-col flex-1 justify-between gap-y-6 p-[12px] group">
                                     <img src="../assets/img/game-pancake-protectors-purple.png" width="108" height="108"
-                                        alt="" class="default">
+                                        alt=""
+                                        class="default absolute group-hover:opacity-0 transition-all ease-in-out delay-200">
+                                    <img src="../assets/img/game-pancake-protectors.png" width="108" height="108" alt=""
+                                        class="default">
                                     <div>
                                         <div class="text-white text-xl mb-[8px] font-bold">Gaming Marketplace</div>
                                         <div class=" text-white text-sm font-medium">Play, Build and Connect on
                                             PancakeSwap</div>
                                     </div>
                                     <div class="flex">
-                                        <div class="font-bold text-[#B8ADD2]">Play Now</div>
+                                        <div
+                                            class="font-bold text-[#B8ADD2] group-hover:text-colorsPrimary transition-all ease-in-out delay-200">
+                                            Play Now</div>
                                         <svg viewBox="0 0 24 24" color="" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-white">
                                             <path
@@ -312,8 +365,10 @@
                                     </div>
                                 </div>
                                 <div data-key="link2"
-                                    class="content cursor-pointer flex flex-col flex-1 justify-between gap-y-3 p-[12px]">
+                                    class="content cursor-pointer flex flex-col flex-1 justify-between gap-y-3 p-[12px] group">
                                     <img src="../assets/img/game-prediction-purple.png" width="108" height="108" alt=""
+                                        class="default absolute group-hover:opacity-0 transition-all ease-in-out delay-200">
+                                    <img src="../assets/img/game-prediction.png" width="108" height="108" alt=""
                                         class="default">
                                     <div>
                                         <div class="text-white text-xl mb-[8px] font-bold">Prediction</div>
@@ -321,7 +376,9 @@
                                             minutes</div>
                                     </div>
                                     <div class="flex">
-                                        <div class="font-bold text-[#B8ADD2]">Try Now</div>
+                                        <div
+                                            class="font-bold text-[#B8ADD2] group-hover:text-colorsPrimary transition-all ease-in-out delay-200">
+                                            Try Now</div>
                                         <svg viewBox="0 0 24 24" color="" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-white">
                                             <path
@@ -331,8 +388,10 @@
                                     </div>
                                 </div>
                                 <div
-                                    class="content cursor-pointer flex flex-col flex-1 justify-between gap-y-3 p-[12px]">
+                                    class="content cursor-pointer flex flex-col flex-1 justify-between gap-y-3 p-[12px] group">
                                     <img src="../assets/img/nft-marketplace-purple.png" width="108" height="108" alt=""
+                                        class="default absolute group-hover:opacity-0 transition-all ease-in-out delay-200">
+                                    <img src="../assets/img/nft-marketplace.png" width="108" height="108" alt=""
                                         class="default">
                                     <div>
                                         <div class="text-white text-xl mb-[8px] font-bold">NFT Marketplace</div>
@@ -340,7 +399,9 @@
                                         </div>
                                     </div>
                                     <div class="flex">
-                                        <div class="font-bold text-[#B8ADD2]">Trade Now</div>
+                                        <div
+                                            class="font-bold text-[#B8ADD2] group-hover:text-colorsPrimary transition-all ease-in-out delay-200">
+                                            Trade Now</div>
                                         <svg viewBox="0 0 24 24" color="" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-white">
                                             <path
@@ -356,12 +417,66 @@
             </div>
         </div>
     </div>
-    <div class="flex justify-center items-center bg-black w-full py-[48px]">
-        <div class="flex justify-center items-center px-[16px]">
-            <div class="flex flex-col justify-center items-center max-w-[822px]">
+    <div class="flex justify-center items-center w-full bg-black py-[48px]">
+        <div class="flex flex-col justify-center items-center px-[16px]">
+            <div class="flex flex-col justify-center items-center max-w-[968px] gap-y-8">
+                <div class="text-white font-extrabold text-title40">Unlock the Full Potential of DeFi with <span
+                        class="text-colorsSecondary">CAKE</span></div>
+                <div class="text-[#B8ADD2] font-bold text-[20px] text-center">Experience the power of community
+                    ownership,
+                    global
+                    governance, and
+                    explore
+                    infinite
+                    use cases
+                    within the PancakeSwap ecosystem</div>
+                <div class="flex gap-x-[14px]">
+                    <a href="#"><button
+                            class="bg-colorsPrimary font-bold text-[20px] px-[24px] h-[48px] rounded-2xl animate__animated animate__flipInX animate__infinite">Buy
+                            CAKE</button></a>
+                    <a href="#"></a><button
+                        class="text-colorsPrimary text-[20px] font-bold rounded-2xl h-[48px pr-[24px] flex items-center hover:underline">Learn<svg
+                            viewBox="0 0 24 24" color="primary" ml="0.5rem" width="20px"
+                            xmlns="http://www.w3.org/2000/svg" class="ml-[0.5rem] fill-colorsPrimary">
+                            <path
+                                d="M18 19H6C5.45 19 5 18.55 5 18V6C5 5.45 5.45 5 6 5H11C11.55 5 12 4.55 12 4C12 3.45 11.55 3 11 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V13C21 12.45 20.55 12 20 12C19.45 12 19 12.45 19 13V18C19 18.55 18.55 19 18 19ZM14 4C14 4.55 14.45 5 15 5H17.59L8.46 14.13C8.07 14.52 8.07 15.15 8.46 15.54C8.85 15.93 9.48 15.93 9.87 15.54L19 6.41V9C19 9.55 19.45 10 20 10C20.55 10 21 9.55 21 9V4C21 3.45 20.55 3 20 3H15C14.45 3 14 3.45 14 4Z">
+                            </path>
+                        </svg></button></a>
+                </div>
+                <img class="coin-content animate__animated animate__flipInX animate__infinite"
+                    src="../assets/img/download (1).png" alt="">
+            </div>
+            <div class="font-bold mt-[40px] text-white text-title32">CAKE<span
+                    class="text-colorsSecondary">Figures</span></div>
+
+            <div class="my-[24px] flex w-full">
+                <div class="py-[12px] px-[16px] flex flex-col justify-center items-center border-r border-r-gray-600">
+                    <div class="font-bold text-white text-[16px]">Circulating Supply</div>
+                    <div class="font-bold text-colorsSecondary text-[24px]">236,000,744</div>
+                </div>
+                <div class="py-[12px] px-[16px] flex flex-col justify-center items-center border-r border-r-gray-600">
+                    <div class="font-bold text-white text-[16px]">Total supply</div>
+                    <div class="font-bold text-colorsSecondary text-[28px]"><span>385,594,227</span></div>
+                </div>
+                <div class="py-[12px] px-[16px] flex flex-col justify-center items-center border-r border-r-gray-600">
+                    <div class="font-bold text-white text-[16px]">Market cap</div>
+                    <div class="font-bold text-colorsSecondary text-[24px]">$760 million</div>
+                </div>
+                <div class="py-[12px] px-[16px] flex flex-col justify-center items-center border-r border-r-gray-600">
+                    <div class="font-bold text-white text-[16px]">Token Burn</div>
+                    <div class="font-bold text-colorsSecondary text-[24px]">1,188,690,733</div>
+                </div>
+                <div class="py-[12px] px-[16px] flex flex-col justify-center items-center border-r border-r-gray-600">
+                    <div class="font-bold text-white text-[16px]">Current emissions</div>
+                    <div class="font-bold text-colorsSecondary text-[24px]">1,36/block</div>
+                </div>
             </div>
         </div>
     </div>
+    <svg viewBox="0 0 1660 48" preserveAspectRatio="none" color="text" width="20px" xmlns="http://www.w3.org/2000/svg"
+        class=" bg-black fill-[#0B4576] w-full">
+        <path d="M0 0C520.985 1.81132 1323.74 32.7547 1660 48H0V0Z"></path>
+    </svg>
 </body>
 
 </html>
