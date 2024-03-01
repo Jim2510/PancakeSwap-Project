@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   </link>
 
-  <script src="../script/Header.js" defer="defer"></script>
+  <script src="../script/Header.js" defer></script>
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -77,6 +77,20 @@
       },
     };
   </script>
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      .no-scrollbar::-webkit-scrollbar {
+          display: none;
+      }
+     /* Hide scrollbar for IE, Edge and Firefox */
+      .no-scrollbar {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+    }
+  }
+  </style>
 
   <link rel="stylesheet" href="../CSS/scrollbar.css">
   </link>
@@ -142,14 +156,14 @@
           </svg>
         </a>
 
-        <div onmouseover="showTrade()" onmouseout="hiddenTrade()" id="trade"
-          class="hover:bg-slate-500 h-[90%] hover:bg-opacity-30 font-normal text-textNav ml-[24px] text-base px-[16px] cursor-pointer flex items-center hover:rounded-2xl hover:bg-navLinkHover z-10">
+        <div id="trade"
+          class="relative group hover:bg-slate-500 h-[90%] hover:bg-opacity-30 font-normal text-textNav ml-[24px] text-base px-[16px] cursor-pointer flex items-center hover:rounded-2xl hover:bg-navLinkHover z-10">
           <p>Trade</p>
 
           <!-- TRADE MENU -->
 
           <div id="tradeMenu"
-            class="w-[280px] bg-bgFooterNav absolute top-[53px] rounded-2xl left-[200px] flex-col text-textNav hidden border-y-[1px] border-gray-700">
+            class="group-hover:flex -translate-x-1/2 ml-[135px] w-[280px] bg-bgFooterNav absolute top-[50px] rounded-2xl left-0 flex-col text-textNav hidden border-y-[1px] border-gray-700">
             <div class="hover:bg-navLinkHover hover:rounded-t-2xl px-[16px] h-[48px] flex items-center">
               <p>Swap</p>
             </div>
@@ -202,14 +216,14 @@
           </div>
         </div>
 
-        <div onmouseover="showEarn()" onmouseout="hiddenEarn()"
-          class="hover:bg-slate-500 h-[90%] hover:bg-opacity-30 font-normal text-textNav text-base px-[16px] cursor-pointer flex items-center hover:rounded-2xl hover:bg-navLinkHover">
+        <div
+          class="relative group hover:bg-slate-500 h-[90%] hover:bg-opacity-30 font-normal text-textNav text-base px-[16px] cursor-pointer flex items-center hover:rounded-2xl hover:bg-navLinkHover">
           <p>Earn</p>
 
           <!-- EARN MENU -->
 
           <div id="earnMenu"
-            class="w-[280px] bg-bgFooterNav absolute top-[53px] rounded-2xl left-[270px] flex-col text-textNav hidden border-y-[1px] border-gray-700 z-10">
+            class="group-hover:flex -translate-x-1/2 ml-[135px] w-[280px] bg-bgFooterNav absolute top-[50px] rounded-2xl left-0 flex-col text-textNav hidden border-y-[1px] border-gray-700 z-10">
             <div class="hover:bg-navLinkHover hover:rounded-t-2xl px-[16px] h-[48px] flex items-center">
               <p>Farms</p>
             </div>
@@ -236,14 +250,14 @@
           </div>
         </div>
 
-        <div onmouseover="showGame()" onmouseout="hiddenGame()"
-          class="hover:bg-slate-500 h-[90%] hover:bg-opacity-30 font-normal text-textNav text-base px-[16px] cursor-pointer flex items-center hover:rounded-2xl hover:bg-navLinkHover">
+        <div
+          class="relative group hover:bg-slate-500 h-[90%] hover:bg-opacity-30 font-normal text-textNav text-base px-[16px] cursor-pointer flex items-center hover:rounded-2xl hover:bg-navLinkHover">
           <p>Game</p>
 
           <!-- GAME MENU -->
 
           <div id="gameMenu"
-            class="w-[280px] bg-bgFooterNav absolute top-[53px] rounded-2xl left-[335px] flex-col text-textNav hidden border-y-[1px] border-gray-700 z-10">
+            class="group-hover:flex -translate-x-1/2 ml-[135px] w-[280px] bg-bgFooterNav absolute top-[50px] rounded-2xl left-0 flex-col text-textNav hidden border-y-[1px] border-gray-700 z-10">
             <div class="hover:bg-navLinkHover hover:rounded-t-2xl px-[16px] h-[48px] flex items-center justify-between">
               <p>Gaming Marketplace</p>
 
@@ -273,14 +287,14 @@
           </div>
         </div>
 
-        <div onmouseover="showNft()" onmouseout="hiddenNft()"
-          class="hover:bg-slate-500 h-[90%] hover:bg-opacity-30 font-normal text-textNav text-base px-[16px] cursor-pointer flex items-center hover:rounded-2xl hover:bg-navLinkHover">
+        <div
+          class=" relative group hover:bg-slate-500 h-[90%] hover:bg-opacity-30 font-normal text-textNav text-base px-[16px] cursor-pointer flex items-center hover:rounded-2xl hover:bg-navLinkHover">
           <p>NFT</p>
 
           <!-- NFT MENU -->
 
           <div id="nftMenu"
-            class="w-[280px] bg-bgFooterNav absolute top-[53px] rounded-2xl left-[410px] flex-col text-textNav hidden border-y-[1px] border-gray-700 z-10">
+            class="group-hover:flex -translate-x-1/2 ml-[135px] w-[280px] bg-bgFooterNav absolute top-[50px] rounded-2xl left-0 flex-col text-textNav hidden border-y-[1px] border-gray-700 z-10">
             <div class="hover:bg-navLinkHover hover:rounded-t-2xl px-[16px] h-[48px] flex items-center">
               <p>Overview</p>
             </div>
@@ -295,8 +309,8 @@
           </div>
         </div>
 
-        <div onmouseover="showDot()" onmouseout="hiddenDot()"
-          class="hover:bg-slate-500 h-[90%] hover:bg-opacity-30 font-normal text-textNav text-base px-[16px] cursor-pointer flex items-center hover:rounded-2xl hover:bg-navLinkHover">
+        <div 
+          class="relative group hover:bg-slate-500 h-[90%] hover:bg-opacity-30 font-normal text-textNav text-base px-[16px] cursor-pointer flex items-center hover:rounded-2xl hover:bg-navLinkHover">
           <p>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots"
               viewBox="0 0 16 16">
@@ -309,7 +323,7 @@
           <!-- DOT MENU -->
 
           <div id="dotMenu"
-            class="w-[280px] bg-bgFooterNav absolute top-[53px] rounded-2xl left-[470px] flex-col text-textNav hidden border-y-[1px] border-gray-700 z-10">
+            class="group-hover:flex -translate-x-1/2 ml-[135px] w-[280px] bg-bgFooterNav absolute top-[50px] rounded-2xl left-0 flex-col text-textNav hidden border-y-[1px] border-gray-700 z-10">
             <div class="hover:bg-navLinkHover hover:rounded-t-2xl px-[16px] h-[48px] flex items-center">
               <p>Info</p>
             </div>
@@ -401,8 +415,8 @@
         </div>
 
         <div
-          class="h-[90%] font-normal text-textNav text-base hover:text-textIconHover transition-all ease-in-out delay-200 px-[14px] cursor-pointer flex items-center"
-          onmouseover="showLang()" onmouseout="hiddenLang()">
+          class="group h-[90%] font-normal text-textNav text-base hover:text-textIconHover transition-all ease-in-out delay-200 px-[14px] cursor-pointer flex items-center relative"
+        >
           <p>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
               <path
@@ -414,7 +428,7 @@
           <!-- MENU LANGUAGES -->
 
           <div
-            class="w-max bg-bgFooterNav hidden flex-col absolute left-[1010px] top-[38px] h-[386px] p-[16px] z-10 overflow-auto snap font-semibold text-white custom-scrollbar rounded-lg"
+            class="no-scrollbar w-max bg-bgFooterNav hidden group-hover:flex ml-[10px] -translate-x-1/2 flex-col absolute top-[20px] h-[386px] p-[16px] z-10 overflow-auto snap font-semibold text-white custom-scrollbar rounded-lg"
             id="languages">
             <button class="px-[8px] min-h-[32px] hover:text-textIconHover">العربية</button>
 
@@ -488,7 +502,7 @@
         </div>
 
         <div onclick="showBell()"
-          class="h-[90%] font-normal text-textNav text-base px-[14px] cursor-pointer flex items-center">
+          class="relative h-[90%] font-normal text-textNav text-base px-[14px] cursor-pointer flex items-center">
           <p>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bell-fill"
               viewBox="0 0 16 16">
@@ -501,7 +515,7 @@
           <!-- NOTIFICATION MENU -->
 
           <div id="bell"
-            class="p-[24px] w-[400px] h-[512px] justify-between items-center flex-col bg-bgFooterNav hidden fixed top-[53px] rounded-3xl left-[65%] text-textNav border-y-[1px] border-gray-700 z-10">
+            class="absolute p-[24px] w-[400px] h-[512px] justify-between items-center flex-col bg-bgFooterNav hidden top-[33px] rounded-3xl -translate-x-1/2 text-textNav border-y-[1px] border-gray-700 z-10">
             <div class="flex justify-center items-center mt-[40px]">
               <img src="../assets/img/welcome-notification-bell.webp" alt="" class="w-[270px] h-[162px]">
             </div>
