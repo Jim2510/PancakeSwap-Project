@@ -559,7 +559,7 @@
     </nav>
   </div>
 
-  <div
+  <!-- <div
     class="mt-[48px] flex-col slider lg:w-[75%] h-[200px] rounded-[30px] bg-colorsPrimary flex justify-center items-center border border-black border-solid">
     <div id="containerInfo">
       <h1 class="logoTitle animate__animated animate__fadeInRight">prova</h1>
@@ -576,22 +576,22 @@
 
       <button class="buttonSlider" data-key="slide3">Prova</button>
     </div>
-  </div>
+  </div> -->
 
   <!-- SETTINGS MENU -->
 
   <div
     class="w-[100vw] h-[100vh] absolute bg-bgSettings hidden justify-center items-center animate__animated animate__fadeIn"
     id="settings" onclick="toggleSettings()">
-    <div class="bg-bgFooterNav w-[490px] rounded-t-[32px] rounded-b-[32px] min-h-[90vh]">
+    <div class="bg-bgFooterNav w-[490px] rounded-t-[32px] rounded-b-[32px] min-h-[85vh]">
       <div
         class="h-[72px] flex px-[24px] py-[12px] text-[20px] font-semibold text-white justify-between bg-bgSetting rounded-t-[32px]">
         <div class=" rounded-t-3xl flex justify-center items-center">
           <h2 class="">Settings</h2>
         </div>
 
-        <button class="">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#1fc7d4" class="bi bi-x-lg"
+        <button class="w-[48px] h-[48px] flex justify-center items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#1fc7d4" class="bi bi-x-lg"
             viewBox="0 0 16 16">
             <path
               d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z">
@@ -601,13 +601,94 @@
       </div>
 
       <div class="px-[24px] py-[24px]">
-        <div class="text-[12px] text-globalTxt font-semibold">GLOBAL</div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
+        <div class="text-[12px] text-globalTxt font-semibold mb-[23px]">GLOBAL</div>
+        <div class="flex justify-between h-[32px] mb-[23px]">
+          <div class="text-[16px] text-white"><p class=" font-normal">Dark mode</p></div>
+          <div class="">
+            <input type="checkbox">
+          </div>
+        </div>
+        <div class="flex justify-between h-[32px] mb-[23px]">
+          <div class="text-[16px] text-white font-semibold flex items-center justify-center"><p class="mr-1 font-normal">Subgraph Health Indicator</p>
+            <div class="group relative">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+              <path  fill="#9d79eb" d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+              <path  fill="#9d79eb" d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+              </svg>
+              <div class="group-hover:block w-[320px] bg-white p-[16px] absolute text-black text-[16px] rounded-[24px] font-normal mr-[85px] bottom-[20px] -translate-x-1/2 hidden">Turn on subgraph health indicator all the time. Default is to show the indicator only when the network is delayed</div>
+            </div>
+        </div>
+          <div class="">
+            <input type="checkbox">
+          </div>
+        </div>
+        <div class="flex justify-between h-[32px] mb-[23px]">
+          <div class="text-[16px] text-white font-semibold flex items-center justify-center"><p class="mr-1 font-normal">Show username</p>
+            <div class="group relative">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+              <path  fill="#9d79eb" d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+              <path  fill="#9d79eb" d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+              </svg>
+              <div class="group-hover:block w-[320px] bg-white p-[16px] absolute text-black text-[16px] rounded-[24px] font-normal mr-[85px] bottom-[20px] -translate-x-1/2 hidden">Shows username of wallet instead of bunnies</div>
+            </div>
+          </div>
+          <div class="">
+            <input type="checkbox">
+          </div>
+        </div>
+        <div class="flex justify-between h-[32px] mb-[23px]">
+          <div class="text-[16px] text-white font-semibold flex items-center justify-center"><p class="mr-1 font-normal">Allow notifications</p>
+            <div class="group relative">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+              <path  fill="#9d79eb" d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+              <path  fill="#9d79eb" d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+              </svg>
+              <div class="group-hover:block w-[320px] bg-white p-[16px] absolute text-black text-[16px] rounded-[24px] font-normal mr-[85px] bottom-[20px] -translate-x-1/2 hidden">Enables the web notifications feature. If turned off you will be automatically unsubscribed and the notification bell will not be visible</div>
+            </div>
+            <p class="text-colorsPrimary border ml-2 px-2 border-colorsPrimary rounded-[24px]">BETA</p>
+          </div>
+          <div class="">
+            <input type="checkbox">
+          </div>
+        </div>
+        <div class="flex justify-between h-[32px] mb-[22px]">
+          <div class="text-[16px] text-white">Show testnet</div>
+          <div class="">
+            <input type="checkbox">
+          </div>
+        </div>
+        <div class="flex justify-between h-[32px] mb-[23px]">
+          <div class="text-[16px] text-white font-semibold flex items-center justify-center"><p class="mr-1">Token Risk Scanning</p>
+            <div class="group relative">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+              <path  fill="#9d79eb" d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+              <path  fill="#9d79eb" d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+              </svg>
+              <div class="group-hover:block w-[320px] bg-white p-[16px] absolute text-black text-[16px] rounded-[24px] font-normal mr-[85px] bottom-[20px] -translate-x-1/2 hidden">Automatic risk scanning for the selected token. This scanning result is for reference only, and should NOT be taken as investment advice.
+                <br>
+                Provided <span class="text-colorsPrimary font-semibold">byHashDit</span>
+                <br> 
+               <span class="text-colorsPrimary font-semibold">Learn More</span> 
+              </div>
+            </div>
+          </div>
+          <div class="">
+            <input type="checkbox">
+          </div>
+        </div>
+        <div class="flex justify-between h-[32px] mb-[23px]">
+          <div class="text-[16px] text-white font-semibold flex items-center justify-center"><p class="mr-1">Default Transaction Speed (GWEI)</p>
+            <div class="group relative">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+              <path  fill="#9d79eb" d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+              <path  fill="#9d79eb" d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+              </svg>
+              <div class="group-hover:block w-[320px] bg-white p-[16px] absolute text-black text-[16px] rounded-[24px] font-normal mr-[85px] bottom-[20px] -translate-x-1/2 hidden">Adjusts the gas price (transaction fee) for your transaction. Higher GWEI = higher speed = higher fees.
+                <br>
+                Choose “Default” to use the settings from your current blockchain RPC node.</div>
+            </div>
+          </div>
+        </div>
         <div class="rounded-[32px]"></div>
       </div>
     </div>

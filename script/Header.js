@@ -47,16 +47,6 @@ const toggleMenu = (Id) => {
     menu.classList.toggle("flex");
 }
 
-const showTrade = () => toggleMenu("#tradeMenu");
-const hiddenTrade = () => toggleMenu("#tradeMenu");
-const showEarn = () => toggleMenu("#earnMenu");
-const hiddenEarn = () => toggleMenu("#earnMenu");
-const showGame = () => toggleMenu("#gameMenu");
-const hiddenGame = () => toggleMenu("#gameMenu");
-const showNft = () => toggleMenu("#nftMenu");
-const hiddenNft = () => toggleMenu("#nftMenu");
-const showDot = () => toggleMenu("#dotMenu");
-const hiddenDot = () => toggleMenu("#dotMenu");
 const showBell = () => toggleMenu("#bell");
 const hiddenWarning = () => toggleMenu("#warning");
 const toggleSettings  = () => toggleMenu("#settings");
