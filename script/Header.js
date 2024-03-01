@@ -57,8 +57,6 @@ const showNft = () => toggleMenu("#nftMenu");
 const hiddenNft = () => toggleMenu("#nftMenu");
 const showDot = () => toggleMenu("#dotMenu");
 const hiddenDot = () => toggleMenu("#dotMenu");
-const showLang = () => toggleMenu("#languages");
-const hiddenLang = () => toggleMenu("#languages");
 const showBell = () => toggleMenu("#bell");
 const hiddenWarning = () => toggleMenu("#warning");
-const toggleSettings  = () => toggleMenu("#settings")
+const toggleSettings  = () => toggleMenu("#settings");
