@@ -47,18 +47,28 @@ const toggleMenu = (Id) => {
     menu.classList.toggle("flex");
 }
 
-const showTrade = () => toggleMenu("#tradeMenu");
-const hiddenTrade = () => toggleMenu("#tradeMenu");
-const showEarn = () => toggleMenu("#earnMenu");
-const hiddenEarn = () => toggleMenu("#earnMenu");
-const showGame = () => toggleMenu("#gameMenu");
-const hiddenGame = () => toggleMenu("#gameMenu");
-const showNft = () => toggleMenu("#nftMenu");
-const hiddenNft = () => toggleMenu("#nftMenu");
-const showDot = () => toggleMenu("#dotMenu");
-const hiddenDot = () => toggleMenu("#dotMenu");
-const showLang = () => toggleMenu("#languages");
-const hiddenLang = () => toggleMenu("#languages");
+// const toggleSetting = () => {
+//     const settingButton = document.querySelector('.settingButton');
+//     settingButton.classList.toggle("text-colorsPrimary");
+//     settingButton.classList.toggle("bg-navLinkHover");
+//     settingButton.classList.toggle("text-black");
+//     settingButton.classList.toggle("bg-colorsPrimary");
+// }
+
+function toggleSetting(btnId) {
+    const buttons = document.querySelectorAll('.btn');
+
+    buttons.forEach(button => {
+      if (button.id === btnId) {
+        button.classList.add('text-black', 'bg-colorsPrimary');
+        button.classList.remove('text-colorsPrimary', 'bg-navLinkHover');
+      } else {
+        button.classList.remove('text-black', 'bg-colorsPrimary');
+        button.classList.add('text-colorsPrimary', 'bg-navLinkHover');
+      }
+    });
+  }
+
 const showBell = () => toggleMenu("#bell");
 const hiddenWarning = () => toggleMenu("#warning");
-const toggleSettings  = () => toggleMenu("#settings")
+const toggleSettings  = () => toggleMenu("#settings");
