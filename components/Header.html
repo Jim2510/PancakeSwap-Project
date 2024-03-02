@@ -582,7 +582,7 @@
 
   <div
     class="w-[100vw] h-[100vh] absolute bg-bgSettings hidden justify-center items-center animate__animated animate__fadeIn"
-    id="settings" onclick="toggleSettings()">
+    id="settings">
     <div class="bg-bgFooterNav w-[490px] rounded-t-[32px] rounded-b-[32px] min-h-[85vh]">
       <div
         class="h-[72px] flex px-[24px] py-[12px] text-[20px] font-semibold text-white justify-between bg-bgSetting rounded-t-[32px]">
@@ -590,7 +590,7 @@
           <h2 class="">Settings</h2>
         </div>
 
-        <button class="w-[48px] h-[48px] flex justify-center items-center">
+        <button class="transition-all ease-in-out delay-100 hover:opacity-50 bg-transparent w-[48px] h-[48px] flex justify-center items-center" onclick="toggleSettings()">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#1fc7d4" class="bi bi-x-lg"
             viewBox="0 0 16 16">
             <path
@@ -604,8 +604,9 @@
         <div class="text-[12px] text-globalTxt font-semibold mb-[23px]">GLOBAL</div>
         <div class="flex justify-between h-[32px] mb-[23px]">
           <div class="text-[16px] text-white"><p class=" font-normal">Dark mode</p></div>
-          <div class="">
-            <input type="checkbox">
+          <div class="relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer">
+            <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute">
+            <div class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75"></div>
           </div>
         </div>
         <div class="flex justify-between h-[32px] mb-[23px]">
@@ -618,9 +619,10 @@
               <div class="group-hover:block w-[320px] bg-white p-[16px] absolute text-black text-[16px] rounded-[24px] font-normal mr-[85px] bottom-[20px] -translate-x-1/2 hidden">Turn on subgraph health indicator all the time. Default is to show the indicator only when the network is delayed</div>
             </div>
         </div>
-          <div class="">
-            <input type="checkbox">
-          </div>
+        <div class="relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer">
+          <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute">
+          <div class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75"></div>
+        </div>
         </div>
         <div class="flex justify-between h-[32px] mb-[23px]">
           <div class="text-[16px] text-white font-semibold flex items-center justify-center"><p class="mr-1 font-normal">Show username</p>
@@ -632,8 +634,9 @@
               <div class="group-hover:block w-[320px] bg-white p-[16px] absolute text-black text-[16px] rounded-[24px] font-normal mr-[85px] bottom-[20px] -translate-x-1/2 hidden">Shows username of wallet instead of bunnies</div>
             </div>
           </div>
-          <div class="">
-            <input type="checkbox">
+          <div class="relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer">
+            <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute">
+            <div class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75"></div>
           </div>
         </div>
         <div class="flex justify-between h-[32px] mb-[23px]">
@@ -645,16 +648,18 @@
               </svg>
               <div class="group-hover:block w-[320px] bg-white p-[16px] absolute text-black text-[16px] rounded-[24px] font-normal mr-[85px] bottom-[20px] -translate-x-1/2 hidden">Enables the web notifications feature. If turned off you will be automatically unsubscribed and the notification bell will not be visible</div>
             </div>
-            <p class="text-colorsPrimary border ml-2 px-2 border-colorsPrimary rounded-[24px]">BETA</p>
+            <p class="text-[#31d0aa] border-2 ml-2 px-1 border-[#31d0aa] rounded-[24px]">BETA</p>
           </div>
-          <div class="">
-            <input type="checkbox">
+          <div class="relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer">
+            <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute">
+            <div class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75"></div>
           </div>
         </div>
         <div class="flex justify-between h-[32px] mb-[22px]">
           <div class="text-[16px] text-white">Show testnet</div>
-          <div class="">
-            <input type="checkbox">
+          <div class="relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer">
+            <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute">
+            <div class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75"></div>
           </div>
         </div>
         <div class="flex justify-between h-[32px] mb-[23px]">
@@ -672,11 +677,12 @@
               </div>
             </div>
           </div>
-          <div class="">
-            <input type="checkbox">
+          <div class="relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer">
+            <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute">
+            <div class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75"></div>
           </div>
         </div>
-        <div class="flex justify-between h-[32px] mb-[23px]">
+        <div class="flex justify-between h-[32px] mb-[13px]">
           <div class="text-[16px] text-white font-semibold flex items-center justify-center"><p class="mr-1">Default Transaction Speed (GWEI)</p>
             <div class="group relative">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
@@ -688,6 +694,12 @@
                 Choose “Default” to use the settings from your current blockchain RPC node.</div>
             </div>
           </div>
+        </div>
+        <div class="flex h-[32px] mb-[23px]">
+          <button id="btn1" class="btn px-[16px] text-black bg-colorsPrimary mr-[4px] rounded-[24px] font-semibold" onclick="toggleSetting('btn1')">Default</button>
+          <button id="btn2" class="btn px-[16px] text-colorsPrimary bg-navLinkHover mr-[4px] rounded-[24px] font-semibold" onclick="toggleSetting('btn2')">Standard (3)</button>
+          <button id="btn3" class="btn px-[16px] text-colorsPrimary bg-navLinkHover mr-[4px] rounded-[24px] font-semibold" onclick="toggleSetting('btn3')">Fast (4)</button>
+          <button id="btn4" class="btn px-[16px] text-colorsPrimary bg-navLinkHover mr-[4px] rounded-[24px] font-semibold" onclick="toggleSetting('btn4')">Instant (5)</button>
         </div>
         <div class="rounded-[32px]"></div>
       </div>
