@@ -78,7 +78,7 @@
     };
   </script>
 
-  <style type="text/tailwindcss">
+  <!-- <style type="text/tailwindcss">
     @layer utilities {
       /* Hide scrollbar for Chrome, Safari and Opera */
       .no-scrollbar::-webkit-scrollbar {
@@ -89,7 +89,7 @@
           -ms-overflow-style: none;  /* IE and Edge */
           scrollbar-width: none;  /* Firefox */
     }
-  }
+  } -->
   </style>
 
   <link rel="stylesheet" href="../CSS/scrollbar.css">
@@ -538,10 +538,10 @@
         </div>
 
         <div
-          class="text-white font-bold text-base pr-[14px] cursor-pointer flex items-center bg-navLinkHover rounded-full h-[32px] mr-[8px] hover:bg-hoverCrypto">
-          <img src="../assets/img/56.png" width="32px" alt="bnb" class="mr-[10px]">
+          class="group relative text-white font-bold text-base pr-[14px] cursor-pointer flex items-center bg-navLinkHover rounded-full h-[32px] mr-[8px] hover:bg-hoverCrypto">
+          <img src="../assets/img/56.png" width="32px" alt="bnb" class="mr-[10px]" />
 
-          <p>BNB chain</p>
+          <p>BNB Chain</p>
 
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
             class="bi bi-chevron-down mt-0.5 ml-2" viewBox="0 0 16 16">
@@ -549,6 +549,50 @@
               d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708">
             </path>
           </svg>
+
+          <!-- CRYPTO MENU -->
+
+          <div class="group-hover:flex -translate-x-1/2 ml-[80px] w-[280px] bg-bgFooterNav absolute top-[32px] rounded-2xl left-0 flex-col text-textNav hidden border-y-[1px] border-gray-700">
+            <div class="cursor-default font-normal border-b-[1px] border-gray-700 px-[16px] h-[48px] flex items-center justify-between">
+              <p>Select a network</p>
+            </div>
+            <div class="font-semibold hover:bg-navLinkHover px-[16px] h-[48px] flex items-center">
+              <img src="../assets/img/56.png" width="24px" alt="bnb" class="mr-[10px]" />
+              <p>BNB Chain</p>
+            </div>
+            <div class="font-normal hover:bg-navLinkHover px-[16px] h-[48px] flex items-center">
+              <img src="../assets/img/polygon.png" width="24px" alt="ethereum" class="mr-[10px]" />
+              <p>Ethereum</p>
+            </div>
+            <div class="font-normal hover:bg-navLinkHover px-[16px] h-[48px] flex items-center">
+              <img src="../assets/img/1101.png" width="24px" alt="polygon" class="mr-[10px]" />
+              <p>Polygon zkEVM</p>
+            </div>
+            <div class="font-normal hover:bg-navLinkHover px-[16px] h-[48px] flex items-center">
+              <img src="../assets/img/324.png" width="24px" alt="zksync" class="mr-[10px]" />
+              <p>zkSync Era</p>
+            </div>
+            <div class="font-normal hover:bg-navLinkHover px-[16px] h-[48px] flex items-center">
+              <img src="../assets/img/42161.png" width="24px" alt="arbitrium" class="mr-[10px]" />
+              <p>Arbitrum One</p>
+            </div>
+            <div class="font-normal hover:bg-navLinkHover px-[16px] h-[48px] flex items-center">
+              <img src="../assets/img/59144.png" width="24px" alt="linea" class="mr-[10px]" />
+              <p>Linea</p>
+            </div>
+            <div class="font-normal hover:bg-navLinkHover px-[16px] h-[48px] flex items-center">
+              <img src="../assets/img/8453.png" width="24px" alt="base" class="mr-[10px]" />
+              <p>Base</p>
+            </div>
+            <div class="font-normal hover:bg-navLinkHover px-[16px] h-[48px] flex items-center">
+              <img src="../assets/img/56.png" width="24px" alt="opbnb" class="mr-[10px]" />
+              <p>opBNB</p>
+            </div>
+            <div class="font-normal hover:bg-navLinkHover hover:rounded-b-2xl px-[16px] h-[48px] flex items-center">
+              <img src="../assets/img/apt.png" width="24px" alt="apt" class="mr-[10px]" />
+              <p>Aptos</p>
+            </div>
+          </div>
         </div>
 
         <div
@@ -585,7 +629,7 @@
     id="settings">
     <div class="bg-bgFooterNav w-[490px] rounded-t-[32px] rounded-b-[32px] min-h-[85vh]">
       <div
-        class="h-[72px] flex px-[24px] py-[12px] text-[20px] font-semibold text-white justify-between bg-bgSetting rounded-t-[32px]">
+        class="h-[72px] flex px-[24px] py-[12px] text-[20px] font-semibold text-white justify-between bg-gradient-to-r from-[#3b4155] to-[#3a3045] rounded-t-[32px]">
         <div class=" rounded-t-3xl flex justify-center items-center">
           <h2 class="">Settings</h2>
         </div>
