@@ -72,3 +72,4 @@ function toggleSetting(btnId) {
 const showBell = () => toggleMenu("#bell");
 const hiddenWarning = () => toggleMenu("#warning");
 const toggleSettings  = () => toggleMenu("#settings");
+const toggleConnect = () => toggleMenu("#connect")
