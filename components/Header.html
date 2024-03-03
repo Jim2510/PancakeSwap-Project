@@ -38,6 +38,7 @@
             colorsSecondary: "#a881fc",
             colorWhite: "#f4eef4",
             colorsTertiary: "#b7acd1",
+            colorsTertiaryHover: "#8c83a2",
             bgHeaderStart: "#1d162f",
             bgHeaderEnd: "1e1733",
             secondBgHeaderStart: "#0a080f",
@@ -64,6 +65,7 @@
             title88: "88px",
             title32: "32px",
             title40: "40px",
+            title20: "20px",
           },
           borderRadius: {
             round24: "24px",
@@ -752,8 +754,93 @@
     </div>
   </div>
 
-  <div id="connect" class="w-[100vw] h-[100vh] absolute bg-bgSettings hidden justify-center items-center animate__animated animate__fadeIn">
-    <div class="w-[408px] h-[300px]"></div>
+  <div onclick="toggleConnect()" id="connect" class="w-[100vw] h-[100vh] absolute bg-bgSettings hidden justify-center items-center animate__animated animate__fadeIn">
+    <div onclick="handleInnerClick(event)" class="w-[792px] h-[490px] bg-gradient-to-b from-[#3b3e52] to-[#3b3247] rounded-[24px] z-20 flex relative">
+      <div class="absolute -top-8 px-[12px] -z-10">
+        <button class="font-semibold rounded-t-xl p-[8px] bg-[#372f47] text-[#b8add2]">Connect Wallet</button>
+        <button class="ml-[-4px] font-semibold rounded-t-xl p-[8px] bg-[#b8add2] text-[#372f47]">What's a Web 3 Wallet?</button>
+      </div>
+     <div class="py-[24px] flex justify-center items-center flex-col w-[408px] rounded-[24px] bg-bgFooterNav">
+      <div class="flex flex-col px-[48px]">
+        <div class="">
+        <h3 class="text-[20px] text-white font-semibold  text-start">Connect Wallet</h3>
+        <p class="text-[14px] py-[24px] text-white">Start by connecting with one of the wallets below. Be sure to store your private keys or seed phrase securely. Never share them with anyone.</p>
+        </div>
+      <div class="pb-[14px] grid grid-cols-3 gap-y-[16px] gap-x-[24px] overflow-x-hidden justify-center items-start align-baseline">
+        <div class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative">
+          <img src="../assets/img/metamask.png" alt="metamask" class="mb-1 w-[50px] h-[50px]"/>
+          <p class="text-white text-[12px] align-baseline text-center">
+            Metamask
+          </p>
+        </div>
+        <div class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
+          <img src="../assets/img/binance-w3w.png" alt="binance-w3w" class="mb-1 w-[50px] h-[50px]"/>
+          <p class="text-white text-[12px] align-baseline text-center">
+            Binance Web3 Wallet
+          </p>
+        </div>
+        <div class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
+          <img src="../assets/img/binance.png" alt="binance" class="mb-1 w-[50px] h-[50px]"/>
+          <p class="text-white text-[12px] align-baseline text-center">
+            Binance Wallet
+          </p>
+        </div>
+        <div class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
+          <img src="../assets/img/coinbase.png" alt="coinbase" class="mb-1 w-[50px] h-[50px]" />
+          <p class="text-white text-[12px] align-baseline text-center">
+            Coinbase Wallet
+          </p>
+        </div>
+        <div class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
+          <img src="../assets/img/trust.png" alt="trust" class="mb-1 w-[50px] h-[50px]" />
+          <p class="text-white text-[12px] align-baseline text-center">
+            Trust Wallet
+          </p>
+        </div>
+        <div class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
+          <img src="../assets/img/walletconnect.png" alt="walletConnect" class="mb-1 w-[50px] h-[50px]" />
+          <p class="text-white text-[12px] align-baseline text-center">
+            WalletConnect
+          </p>
+        </div>
+        <div class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
+          <img src="../assets/img/opera.png" alt="opera" class="mb-1 w-[50px] h-[50px]" />
+          <p class="text-white text-[12px] align-baseline text-center">
+            Opera Wallet
+          </p>
+        </div>
+        <div class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
+          <img src="../assets/img/brave.png" alt="brave" class="mb-1 w-[50px] h-[50px]" />
+          <p class="text-white text-[12px] align-baseline text-center">
+            Brave Wallet
+          </p>
+        </div>
+        <div class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
+          <!-- <img src="../assets/img/three-small-dots.svg" alt="dots" class="mb-1 w-[50px] h-[50px]" /> -->
+          <div class="mb-1 w-[50px] h-[50px] bg-black flex justify-center items-center rounded-xl">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="rounded-xl bg-transparent bi bi-three-dots" viewBox="0 0 16 16">
+            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+          </svg>
+        </div>
+          <p class="text-white text-[12px] align-baseline text-center">
+            More
+          </p>
+        </div>
+      </div>
+    </div>
+      <div class="px-[48px]"></div>
+    </div>
+    <div class="flex flex-col flex-1 justify-center items-center mx-[24px] gap-[24px]">
+      <h3 class="text-[20px] font-semibold text-mainPurple">Haven’t got a wallet yet?</h3>
+      <img src="../assets/img/wallet_intro.png" class="w-[198px] h-[178px]" alt="walletIntro">
+      <button class="leading-normal tracking-[0.03em] px-[24px] h-[48px] flex justify-center items-center text-[16px] font-semibold bg-colorsTertiary rounded-[16px] hover:decoration-solid hover:bg-colorsTertiaryHover transition-colors ease-out delay-75">Learn how to connect 
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="ml-2 bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+        <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+      </svg>
+    </button>
+    </div>
+    </div>
   </div>
 
   <!-- HEADER -->

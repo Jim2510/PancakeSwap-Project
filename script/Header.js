@@ -69,6 +69,10 @@ function toggleSetting(btnId) {
     });
   }
 
+  function handleInnerClick(event) {
+    event.stopPropagation();
+  }
+
 const showBell = () => toggleMenu("#bell");
 const hiddenWarning = () => toggleMenu("#warning");
 const toggleSettings  = () => toggleMenu("#settings");
