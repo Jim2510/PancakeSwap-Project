@@ -757,8 +757,8 @@
   <div onclick="toggleConnect()" id="connect" class="w-[100vw] h-[100vh] absolute bg-bgSettings hidden justify-center items-center animate__animated animate__fadeIn">
     <div onclick="handleInnerClick(event)" class="w-[792px] h-[490px] bg-gradient-to-b from-[#3b3e52] to-[#3b3247] rounded-[24px] z-20 flex relative">
       <div class="absolute -top-8 px-[12px] -z-10">
-        <button class="font-semibold rounded-t-xl p-[8px] bg-[#372f47] text-[#b8add2]">Connect Wallet</button>
-        <button class="ml-[-4px] font-semibold rounded-t-xl p-[8px] bg-[#b8add2] text-[#372f47]">What's a Web 3 Wallet?</button>
+        <button id="ct1" onclick=" toggleConnects('ct1')" class="connect font-semibold rounded-t-xl p-[8px] bg-[#372f47] text-[#b8add2]">Connect Wallet</button>
+        <button id="ct2" onclick=" toggleConnects('ct2')" class="connect ml-[-4px] font-semibold rounded-t-xl p-[8px] bg-[#b8add2] text-[#372f47]">What's a Web 3 Wallet?</button>
       </div>
      <div class="py-[24px] flex justify-center items-center flex-col w-[408px] rounded-[24px] bg-bgFooterNav">
       <div class="flex flex-col px-[48px]">

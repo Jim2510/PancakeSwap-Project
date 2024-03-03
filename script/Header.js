@@ -69,6 +69,20 @@ function toggleSetting(btnId) {
     });
   }
 
+  function toggleConnects(btnId) {
+    const buttons = document.querySelectorAll(".connect");
+
+    buttons.forEach(button => {
+        if (button.id === btnId) {
+            button.classList.add('bg-[#372f47]', 'text-[#b8add2]');
+            button.classList.remove('bg-[#b8add2]', 'text-[#372f47]');
+        } else {
+            button.classList.remove('bg-[#372f47]', 'text-[#b8add2]');
+            button.classList.add('bg-[#b8add2]', 'text-[#372f47]');
+        }
+    });
+  }
+
   function handleInnerClick(event) {
     event.stopPropagation();
   }
