@@ -1,15 +1,10 @@
-const objLink = {
-    link: {
-        link: "https://google.com",
-    },
-    link2: {
-        link: "https://google.com",
-    },
+const btnTop = document.getElementById('topBtn')
 
+onscroll = () => {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        btnTop.style.display = "flex";
+    } else {
+        btnTop.style.display = "none";
+    }
 }
-document.querySelectorAll('.content').forEach(div => {
-    div.addEventListener('click', (event) => {
-        const divKey = objLink[event.target.dataset.key]
-        location.assign(divKey.link)
-    })
-})
+const buttonTop = () => document.documentElement.scrollTop = 0;
