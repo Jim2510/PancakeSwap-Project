@@ -60,6 +60,7 @@
             bgSetting: "#3a3b4f",
             globalTxt: "#9d79eb",
             mainPurple: "#a881fc",
+            bgBtnSlide1: "#702d25"
           },
           fontSize: {
             title88: "88px",
@@ -75,6 +76,20 @@
           },
           fontFamily: {
             display: ["Kanit", "sans-serif"],
+          },
+          backgroundImage: {
+            firstBanner: "url('../assets/img/background-image.jpg')",
+            secondBanner: "url('../assets/img/2banner.png')",
+            thirdBanner: "url('../assets/img/3banner.png')",
+            fourthBanner: "url('../assets/img/purple-blur-1.jpg')",
+            fifthBanner: "url('../assets/img/banner5.png')",
+            sixthBanner: "url('../assets/img/6banner.png')",
+            float1: "url('https://assets.pancakeswap.finance/web/banners/nemesis-downfall/bg-desktop.png')",
+            float2: "url('https://assets.pancakeswap.finance/web/banners/top-traders/bg-desktop.png')",
+            float3: "url('../assets/img/bunnybell.webp')",
+            float4: "",
+            float5: "",
+
           },
         },
       },
@@ -93,14 +108,94 @@
           scrollbar-width: none;  /* Firefox */
     }
   }
-  </style> -->
+  </style>  -->
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+  /* Nascondi la barra di scorrimento orizzontale per Chrome, Safari e Opera */
+  .no-scrollbar::-webkit-scrollbar-horizontal {
+    display: none;
+  }
+  /* Nascondi la barra di scorrimento orizzontale per IE, Edge e Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE e Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scroll-parent {
+        display: flex;
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+    
+    .scroll-element {
+        animation: primary 32s linear infinite;
+        opacity: 1; /* Imposta l'opacità iniziale a 1 */
+        transition: opacity 0.5s ease; /* Aggiungi una transizione all'opacità */
+        color: #8fd2ff;
+    }
+
+    .scroll-element2 {
+        animation: secondary 32s linear infinite;
+        opacity: 1; /* Imposta l'opacità iniziale a 1 */
+        transition: opacity 0.5s ease;
+    }
+    
+    /* Aggiungi questa regola per far scomparire gradualmente gli elementi */
+    .scroll-element.fade-out {
+        opacity: 0; /* Imposta l'opacità a 0 quando la classe fade-out è presente */
+    }
+    .scroll-element2.fade-out {
+        opacity: 0; /* Imposta l'opacità a 0 quando la classe fade-out è presente */
+    }
+
+    .blur-bg {
+        filter: blur(4px); /* O qualsiasi valore desiderato per l'effetto blur */
+    }
+    
+    @keyframes primary {
+        from {
+            left: 0%;
+        }
+    
+        to {
+            left: -147%;
+        }
+    }
+
+    @keyframes secondary {
+        from {
+            left: 0%;
+        }
+    
+        to {
+            left: -147%;
+        }
+    }
+
+    @keyframes custom-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-custom-bounce {
+  animation: custom-bounce 5s infinite;
+}
+}
+  </style>
 
   <link rel="stylesheet" href="../CSS/scrollbar.css">
   </link>
 </head>
 
 <body
-  class="flex flex-col items-center w-[100vw] h-[100vh] font-display bg-gradient-to-r from-[#1d162f] via-[#1e1733] to-[#1d162f]">
+  class="custom-scrollbar flex flex-col items-center w-[100vw] h-fit font-display bg-gradient-to-r from-[#1d162f] via-[#1e1733] to-[#1d162f]">
   <div id="warning"
     class="w-[100%] h-[70px] bg-gradient-to-b from-[#7e4fd3] to-[#4b2489] flex justify-center items-center">
     <img src="../assets/img/phishing-warning-bunny.webp" alt="warning bunny" class="w-[92px]">
@@ -128,11 +223,11 @@
       </div>
     </div>
   </div>
-  
+
   <!-- NAVBAR -->
 
-  <div class="w-[100vw] bg-bgFooterNav h-[56px] flex animate__animated animate__fadeInDown">
-    <nav class="w-[100%] flex items-center justify-between px-[16px]">
+  <div class="w-[100vw] bg-bgFooterNav h-[56px] flex animate__animated animate__fadeInDown sticky top-0 z-20">
+    <nav class="w-[100%] h-[56px] flex items-center justify-between px-[16px] z-20" >
       <div class="flex items-center justify-center h-[100%]">
         <a href="">
           <svg viewBox="0 0 1281 199" style="fill: white" class="sc-grXZZQ ktVOoD desktop-icon" color="text"
@@ -312,7 +407,7 @@
           </div>
         </div>
 
-        <div 
+        <div
           class="relative group hover:bg-slate-500 h-[90%] hover:bg-opacity-30 font-normal text-textNav text-base px-[16px] cursor-pointer flex items-center hover:rounded-2xl hover:bg-navLinkHover">
           <p>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots"
@@ -418,8 +513,7 @@
         </div>
 
         <div
-          class="group h-[90%] font-normal text-textNav text-base hover:text-textIconHover transition-all ease-in-out delay-200 px-[14px] cursor-pointer flex items-center relative"
-        >
+          class="group h-[90%] font-normal text-textNav text-base hover:text-textIconHover transition-all ease-in-out delay-200 px-[14px] cursor-pointer flex items-center relative">
           <p>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
               <path
@@ -431,7 +525,7 @@
           <!-- MENU LANGUAGES -->
 
           <div
-            class="no-scrollbar w-max bg-bgFooterNav hidden group-hover:flex ml-[10px] -translate-x-1/2 flex-col absolute top-[20px] h-[386px] p-[16px] z-10 overflow-auto snap font-semibold text-white custom-scrollbar rounded-lg"
+            class="no-scrollbar w-max bg-bgFooterNav hidden group-hover:flex ml-[10px] -translate-x-1/2 flex-col absolute top-[20px] h-[386px] p-[16px] overflow-auto snap font-semibold text-white custom-scrollbar rounded-lg"
             id="languages">
             <button class="px-[8px] min-h-[32px] hover:text-textIconHover">العربية</button>
 
@@ -518,12 +612,12 @@
           <!-- NOTIFICATION MENU -->
 
           <div id="bell"
-            class="absolute p-[24px] w-[400px] h-[512px] justify-between items-center flex-col bg-bgFooterNav hidden top-[33px] rounded-3xl -translate-x-1/2 text-textNav border-y-[1px] border-gray-700 z-10">
+            class="absolute p-[24px] w-[400px] h-[512px] justify-between items-center flex-col bg-bgFooterNav hidden top-[33px] rounded-3xl -translate-x-1/2 text-textNav border-y-[1px] border-gray-700 z-50">
             <div class="flex justify-center items-center mt-[40px]">
               <img src="../assets/img/welcome-notification-bell.webp" alt="" class="w-[270px] h-[162px]">
             </div>
 
-            <div class="flex items-center flex-col gap-[12px]">
+            <div class="flex items-center flex-col gap-[12px] z-50">
               <p class="text-center text-[24px] font-semibold text-white">
                 Notifications From PancakeSwap
               </p>
@@ -534,7 +628,7 @@
               </p>
 
               <button
-                class="font-semibold w-[100%] px-[24px] bg-colorsPrimary h-[50px] text-black text-center mt-[24px] rounded-2xl hover:bg-colorsPrimaryHover transition-all ease-in-out delay-50">connect
+                class="font-semibold w-[100%] px-[24px] bg-colorsPrimary h-[50px] text-black text-center mt-[24px] rounded-2xl hover:bg-colorsPrimaryHover transition-all ease-in-out delay-50 z-50">connect
                 Wallet</button>
             </div>
           </div>
@@ -555,8 +649,10 @@
 
           <!-- CRYPTO MENU -->
 
-          <div class="group-hover:flex -translate-x-1/2 ml-[80px] w-[280px] bg-bgFooterNav absolute top-[32px] rounded-2xl left-0 flex-col text-textNav hidden border-y-[1px] border-gray-700">
-            <div class="cursor-default font-normal border-b-[1px] border-gray-700 px-[16px] h-[48px] flex items-center justify-between">
+          <div
+            class="group-hover:flex -translate-x-1/2 ml-[80px] w-[280px] bg-bgFooterNav absolute top-[32px] rounded-2xl left-0 flex-col text-textNav hidden border-y-[1px] border-gray-700">
+            <div
+              class="cursor-default font-normal border-b-[1px] border-gray-700 px-[16px] h-[48px] flex items-center justify-between">
               <p>Select a network</p>
             </div>
             <div class="text-mainPurple font-semibold hover:bg-navLinkHover px-[16px] h-[48px] flex items-center">
@@ -598,8 +694,7 @@
           </div>
         </div>
 
-        <div
-          onclick="toggleConnect()"
+        <div onclick="toggleConnect()"
           class="h-[32px] font-bold text-black text-base px-[16px] cursor-pointer flex items-center bg-colorsPrimary rounded-full hover:bg-colorsPrimaryHover transition-all ease-in-out delay-50">
           <p>connect wallet</p>
         </div>
@@ -607,29 +702,10 @@
     </nav>
   </div>
 
-  <!-- <div
-    class="mt-[48px] flex-col slider lg:w-[75%] h-[200px] rounded-[30px] bg-colorsPrimary flex justify-center items-center border border-black border-solid">
-    <div id="containerInfo">
-      <h1 class="logoTitle animate__animated animate__fadeInRight">prova</h1>
-
-      <h2 class="titleSlider animate__animated animate__fadeInRight">prova</h2>
-
-      <button class="btnSlider animate__animated animate__fadeInRight">prova</button>
-    </div>
-
-    <div class="flex">
-      <button class="buttonSlider" data-key="slide1">Prova</button>
-
-      <button class="buttonSlider" data-key="slide2">Prova</button>
-
-      <button class="buttonSlider" data-key="slide3">Prova</button>
-    </div>
-  </div> -->
-
   <!-- SETTINGS MENU -->
 
   <div
-    class="w-[100vw] h-[100vh] absolute bg-bgSettings hidden justify-center items-center animate__animated animate__fadeIn"
+    class="w-[100vw] h-[100vh] absolute bg-bgSettings hidden justify-center items-center animate__animated animate__fadeIn z-50"
     id="settings">
     <div class="bg-bgFooterNav w-[490px] rounded-t-[32px] rounded-b-[32px] min-h-[85vh]">
       <div
@@ -638,7 +714,9 @@
           <h2 class="">Settings</h2>
         </div>
 
-        <button class="transition-all ease-in-out delay-100 hover:opacity-50 bg-transparent w-[48px] h-[48px] flex justify-center items-center" onclick="toggleSettings()">
+        <button
+          class="transition-all ease-in-out delay-100 hover:opacity-50 bg-transparent w-[48px] h-[48px] flex justify-center items-center"
+          onclick="toggleSettings()">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#1fc7d4" class="bi bi-x-lg"
             viewBox="0 0 16 16">
             <path
@@ -651,199 +729,721 @@
       <div class="px-[24px] py-[24px]">
         <div class="text-[12px] text-globalTxt font-semibold mb-[23px]">GLOBAL</div>
         <div class="flex justify-between h-[32px] mb-[23px]">
-          <div class="text-[16px] text-white"><p class=" font-normal">Dark mode</p></div>
+          <div class="text-[16px] text-white">
+            <p class=" font-normal">Dark mode</p>
+          </div>
           <div class="relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer">
             <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute">
-            <div class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75"></div>
+            <div
+              class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75">
+            </div>
           </div>
         </div>
         <div class="flex justify-between h-[32px] mb-[23px]">
-          <div class="text-[16px] text-white font-semibold flex items-center justify-center"><p class="mr-1 font-normal">Subgraph Health Indicator</p>
+          <div class="text-[16px] text-white font-semibold flex items-center justify-center">
+            <p class="mr-1 font-normal">Subgraph Health Indicator</p>
             <div class="group relative">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
-              <path  fill="#9d79eb" d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-              <path  fill="#9d79eb" d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                class="bi bi-question-circle" viewBox="0 0 16 16">
+                <path fill="#9d79eb" d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                <path fill="#9d79eb"
+                  d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94" />
               </svg>
-              <div class="group-hover:block w-[320px] bg-white p-[16px] absolute text-black text-[16px] rounded-[24px] font-normal mr-[85px] bottom-[20px] -translate-x-1/2 hidden">Turn on subgraph health indicator all the time. Default is to show the indicator only when the network is delayed</div>
-            </div>
-        </div>
-        <div class="relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer">
-          <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute">
-          <div class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75"></div>
-        </div>
-        </div>
-        <div class="flex justify-between h-[32px] mb-[23px]">
-          <div class="text-[16px] text-white font-semibold flex items-center justify-center"><p class="mr-1 font-normal">Show username</p>
-            <div class="group relative">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
-              <path  fill="#9d79eb" d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-              <path  fill="#9d79eb" d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
-              </svg>
-              <div class="group-hover:block w-[320px] bg-white p-[16px] absolute text-black text-[16px] rounded-[24px] font-normal mr-[85px] bottom-[20px] -translate-x-1/2 hidden">Shows username of wallet instead of bunnies</div>
+              <div
+                class="group-hover:block w-[320px] bg-white p-[16px] absolute text-black text-[16px] rounded-[24px] font-normal mr-[85px] bottom-[20px] -translate-x-1/2 hidden">
+                Turn on subgraph health indicator all the time. Default is to show the indicator only when the network
+                is delayed</div>
             </div>
           </div>
           <div class="relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer">
             <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute">
-            <div class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75"></div>
+            <div
+              class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75">
+            </div>
           </div>
         </div>
         <div class="flex justify-between h-[32px] mb-[23px]">
-          <div class="text-[16px] text-white font-semibold flex items-center justify-center"><p class="mr-1 font-normal">Allow notifications</p>
+          <div class="text-[16px] text-white font-semibold flex items-center justify-center">
+            <p class="mr-1 font-normal">Show username</p>
             <div class="group relative">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
-              <path  fill="#9d79eb" d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-              <path  fill="#9d79eb" d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                class="bi bi-question-circle" viewBox="0 0 16 16">
+                <path fill="#9d79eb" d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                <path fill="#9d79eb"
+                  d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94" />
               </svg>
-              <div class="group-hover:block w-[320px] bg-white p-[16px] absolute text-black text-[16px] rounded-[24px] font-normal mr-[85px] bottom-[20px] -translate-x-1/2 hidden">Enables the web notifications feature. If turned off you will be automatically unsubscribed and the notification bell will not be visible</div>
+              <div
+                class="group-hover:block w-[320px] bg-white p-[16px] absolute text-black text-[16px] rounded-[24px] font-normal mr-[85px] bottom-[20px] -translate-x-1/2 hidden">
+                Shows username of wallet instead of bunnies</div>
+            </div>
+          </div>
+          <div class="relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer">
+            <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute">
+            <div
+              class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75">
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-between h-[32px] mb-[23px]">
+          <div class="text-[16px] text-white font-semibold flex items-center justify-center">
+            <p class="mr-1 font-normal">Allow notifications</p>
+            <div class="group relative">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                class="bi bi-question-circle" viewBox="0 0 16 16">
+                <path fill="#9d79eb" d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                <path fill="#9d79eb"
+                  d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94" />
+              </svg>
+              <div
+                class="group-hover:block w-[320px] bg-white p-[16px] absolute text-black text-[16px] rounded-[24px] font-normal mr-[85px] bottom-[20px] -translate-x-1/2 hidden">
+                Enables the web notifications feature. If turned off you will be automatically unsubscribed and the
+                notification bell will not be visible</div>
             </div>
             <p class="text-[#31d0aa] border-2 ml-2 px-1 border-[#31d0aa] rounded-[24px]">BETA</p>
           </div>
           <div class="relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer">
             <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute">
-            <div class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75"></div>
+            <div
+              class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75">
+            </div>
           </div>
         </div>
         <div class="flex justify-between h-[32px] mb-[22px]">
           <div class="text-[16px] text-white">Show testnet</div>
           <div class="relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer">
             <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute">
-            <div class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75"></div>
+            <div
+              class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75">
+            </div>
           </div>
         </div>
         <div class="flex justify-between h-[32px] mb-[23px]">
-          <div class="text-[16px] text-white font-semibold flex items-center justify-center"><p class="mr-1">Token Risk Scanning</p>
+          <div class="text-[16px] text-white font-semibold flex items-center justify-center">
+            <p class="mr-1">Token Risk Scanning</p>
             <div class="group relative">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
-              <path  fill="#9d79eb" d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-              <path  fill="#9d79eb" d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                class="bi bi-question-circle" viewBox="0 0 16 16">
+                <path fill="#9d79eb" d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                <path fill="#9d79eb"
+                  d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94" />
               </svg>
-              <div class="group-hover:block w-[320px] bg-white p-[16px] absolute text-black text-[16px] rounded-[24px] font-normal mr-[85px] bottom-[20px] -translate-x-1/2 hidden">Automatic risk scanning for the selected token. This scanning result is for reference only, and should NOT be taken as investment advice.
+              <div
+                class="group-hover:block w-[320px] bg-white p-[16px] absolute text-black text-[16px] rounded-[24px] font-normal mr-[85px] bottom-[20px] -translate-x-1/2 hidden">
+                Automatic risk scanning for the selected token. This scanning result is for reference only, and should
+                NOT be taken as investment advice.
                 <br>
                 Provided <span class="text-colorsPrimary font-semibold">byHashDit</span>
-                <br> 
-               <span class="text-colorsPrimary font-semibold">Learn More</span> 
+                <br>
+                <span class="text-colorsPrimary font-semibold">Learn More</span>
               </div>
             </div>
           </div>
           <div class="relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer">
             <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute">
-            <div class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75"></div>
+            <div
+              class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75">
+            </div>
           </div>
         </div>
         <div class="flex justify-between h-[32px] mb-[13px]">
-          <div class="text-[16px] text-white font-semibold flex items-center justify-center"><p class="mr-1">Default Transaction Speed (GWEI)</p>
+          <div class="text-[16px] text-white font-semibold flex items-center justify-center">
+            <p class="mr-1">Default Transaction Speed (GWEI)</p>
             <div class="group relative">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
-              <path  fill="#9d79eb" d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-              <path  fill="#9d79eb" d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                class="bi bi-question-circle" viewBox="0 0 16 16">
+                <path fill="#9d79eb" d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                <path fill="#9d79eb"
+                  d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94" />
               </svg>
-              <div class="group-hover:block w-[320px] bg-white p-[16px] absolute text-black text-[16px] rounded-[24px] font-normal mr-[85px] bottom-[20px] -translate-x-1/2 hidden z-20">Adjusts the gas price (transaction fee) for your transaction. Higher GWEI = higher speed = higher fees.
+              <div
+                class="group-hover:block w-[320px] bg-white p-[16px] absolute text-black text-[16px] rounded-[24px] font-normal mr-[85px] bottom-[20px] -translate-x-1/2 hidden z-20">
+                Adjusts the gas price (transaction fee) for your transaction. Higher GWEI = higher speed = higher fees.
                 <br>
-                Choose “Default” to use the settings from your current blockchain RPC node.</div>
+                Choose “Default” to use the settings from your current blockchain RPC node.
+              </div>
             </div>
           </div>
         </div>
         <div class="flex h-[32px] mb-[23px]">
-          <button id="btn1" class="btn px-[16px] text-black bg-colorsPrimary mr-[4px] rounded-[24px] font-semibold" onclick="toggleSetting('btn1')">Default</button>
-          <button id="btn2" class="btn px-[16px] text-colorsPrimary bg-navLinkHover mr-[4px] rounded-[24px] font-semibold" onclick="toggleSetting('btn2')">Standard (3)</button>
-          <button id="btn3" class="btn px-[16px] text-colorsPrimary bg-navLinkHover mr-[4px] rounded-[24px] font-semibold" onclick="toggleSetting('btn3')">Fast (4)</button>
-          <button id="btn4" class="btn px-[16px] text-colorsPrimary bg-navLinkHover mr-[4px] rounded-[24px] font-semibold" onclick="toggleSetting('btn4')">Instant (5)</button>
+          <button id="btn1" class="btn px-[16px] text-black bg-colorsPrimary mr-[4px] rounded-[24px] font-semibold"
+            onclick="toggleSetting('btn1')">Default</button>
+          <button id="btn2"
+            class="btn px-[16px] text-colorsPrimary bg-navLinkHover mr-[4px] rounded-[24px] font-semibold"
+            onclick="toggleSetting('btn2')">Standard (3)</button>
+          <button id="btn3"
+            class="btn px-[16px] text-colorsPrimary bg-navLinkHover mr-[4px] rounded-[24px] font-semibold"
+            onclick="toggleSetting('btn3')">Fast (4)</button>
+          <button id="btn4"
+            class="btn px-[16px] text-colorsPrimary bg-navLinkHover mr-[4px] rounded-[24px] font-semibold"
+            onclick="toggleSetting('btn4')">Instant (5)</button>
         </div>
         <div class="rounded-[32px]"></div>
       </div>
     </div>
   </div>
 
-  <div onclick="toggleConnect()" id="connect" class="w-[100vw] h-[100vh] absolute bg-bgSettings hidden justify-center items-center animate__animated animate__fadeIn">
-    <div onclick="handleInnerClick(event)" class="w-[792px] h-[490px] bg-gradient-to-b from-[#3b3e52] to-[#3b3247] rounded-[24px] z-20 flex relative">
+  <div onclick="toggleConnect()" id="connect"
+    class="w-[100vw] h-[100vh] absolute bg-bgSettings hidden justify-center items-center animate__animated animate__fadeIn z-40">
+    <div onclick="handleInnerClick(event)"
+      class="w-[792px] h-[490px] bg-gradient-to-b from-[#3b3e52] to-[#3b3247] rounded-[24px] z-50 flex relative">
       <div class="absolute -top-8 px-[12px] -z-10">
-        <button id="ct1" onclick=" toggleConnects('ct1')" class="connect font-semibold rounded-t-xl p-[8px] bg-[#372f47] text-[#b8add2]">Connect Wallet</button>
-        <button id="ct2" onclick=" toggleConnects('ct2')" class="connect ml-[-4px] font-semibold rounded-t-xl p-[8px] bg-[#b8add2] text-[#372f47]">What's a Web 3 Wallet?</button>
+        <button id="ct1" onclick=" toggleConnects('ct1')"
+          class="connect font-semibold rounded-t-xl p-[8px] bg-[#372f47] text-[#b8add2]">Connect Wallet</button>
+        <button id="ct2" onclick=" toggleConnects('ct2')"
+          class="connect ml-[-4px] font-semibold rounded-t-xl p-[8px] bg-[#b8add2] text-[#372f47]">What's a Web 3
+          Wallet?</button>
       </div>
-     <div class="py-[24px] flex justify-center items-center flex-col w-[408px] rounded-[24px] bg-bgFooterNav">
-      <div class="flex flex-col px-[48px]">
-        <div class="">
-        <h3 class="text-[20px] text-white font-semibold  text-start">Connect Wallet</h3>
-        <p class="text-[14px] py-[24px] text-white">Start by connecting with one of the wallets below. Be sure to store your private keys or seed phrase securely. Never share them with anyone.</p>
+      <div class="py-[24px] flex justify-center items-center flex-col w-[408px] rounded-[24px] bg-bgFooterNav">
+        <div class="flex flex-col px-[48px]">
+          <div class="">
+            <h3 class="text-[20px] text-white font-semibold  text-start">Connect Wallet</h3>
+            <p class="text-[14px] py-[24px] text-white">Start by connecting with one of the wallets below. Be sure to
+              store your private keys or seed phrase securely. Never share them with anyone.</p>
+          </div>
+          <div
+            class="pb-[14px] grid grid-cols-3 gap-y-[16px] gap-x-[24px] overflow-x-hidden justify-center items-start align-baseline">
+            <div
+              class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative">
+              <img src="../assets/img/metamask.png" alt="metamask" class="mb-1 w-[50px] h-[50px]" />
+              <p class="text-white text-[12px] align-baseline text-center">
+                Metamask
+              </p>
+            </div>
+            <div
+              class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
+              <img src="../assets/img/binance-w3w.png" alt="binance-w3w" class="mb-1 w-[50px] h-[50px]" />
+              <p class="text-white text-[12px] align-baseline text-center">
+                Binance Web3 Wallet
+              </p>
+            </div>
+            <div
+              class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
+              <img src="../assets/img/binance.png" alt="binance" class="mb-1 w-[50px] h-[50px]" />
+              <p class="text-white text-[12px] align-baseline text-center">
+                Binance Wallet
+              </p>
+            </div>
+            <div
+              class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
+              <img src="../assets/img/coinbase.png" alt="coinbase" class="mb-1 w-[50px] h-[50px]" />
+              <p class="text-white text-[12px] align-baseline text-center">
+                Coinbase Wallet
+              </p>
+            </div>
+            <div
+              class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
+              <img src="../assets/img/trust.png" alt="trust" class="mb-1 w-[50px] h-[50px]" />
+              <p class="text-white text-[12px] align-baseline text-center">
+                Trust Wallet
+              </p>
+            </div>
+            <div
+              class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
+              <img src="../assets/img/walletconnect.png" alt="walletConnect" class="mb-1 w-[50px] h-[50px]" />
+              <p class="text-white text-[12px] align-baseline text-center">
+                WalletConnect
+              </p>
+            </div>
+            <div
+              class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
+              <img src="../assets/img/opera.png" alt="opera" class="mb-1 w-[50px] h-[50px]" />
+              <p class="text-white text-[12px] align-baseline text-center">
+                Opera Wallet
+              </p>
+            </div>
+            <div
+              class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
+              <img src="../assets/img/brave.png" alt="brave" class="mb-1 w-[50px] h-[50px]" />
+              <p class="text-white text-[12px] align-baseline text-center">
+                Brave Wallet
+              </p>
+            </div>
+            <div
+              class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
+              <!-- <img src="../assets/img/three-small-dots.svg" alt="dots" class="mb-1 w-[50px] h-[50px]" /> -->
+              <div class="mb-1 w-[50px] h-[50px] bg-black flex justify-center items-center rounded-xl">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
+                  class="rounded-xl bg-transparent bi bi-three-dots" viewBox="0 0 16 16">
+                  <path
+                    d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                </svg>
+              </div>
+              <p class="text-white text-[12px] align-baseline text-center">
+                More
+              </p>
+            </div>
+          </div>
         </div>
-      <div class="pb-[14px] grid grid-cols-3 gap-y-[16px] gap-x-[24px] overflow-x-hidden justify-center items-start align-baseline">
-        <div class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative">
-          <img src="../assets/img/metamask.png" alt="metamask" class="mb-1 w-[50px] h-[50px]"/>
-          <p class="text-white text-[12px] align-baseline text-center">
-            Metamask
-          </p>
-        </div>
-        <div class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
-          <img src="../assets/img/binance-w3w.png" alt="binance-w3w" class="mb-1 w-[50px] h-[50px]"/>
-          <p class="text-white text-[12px] align-baseline text-center">
-            Binance Web3 Wallet
-          </p>
-        </div>
-        <div class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
-          <img src="../assets/img/binance.png" alt="binance" class="mb-1 w-[50px] h-[50px]"/>
-          <p class="text-white text-[12px] align-baseline text-center">
-            Binance Wallet
-          </p>
-        </div>
-        <div class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
-          <img src="../assets/img/coinbase.png" alt="coinbase" class="mb-1 w-[50px] h-[50px]" />
-          <p class="text-white text-[12px] align-baseline text-center">
-            Coinbase Wallet
-          </p>
-        </div>
-        <div class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
-          <img src="../assets/img/trust.png" alt="trust" class="mb-1 w-[50px] h-[50px]" />
-          <p class="text-white text-[12px] align-baseline text-center">
-            Trust Wallet
-          </p>
-        </div>
-        <div class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
-          <img src="../assets/img/walletconnect.png" alt="walletConnect" class="mb-1 w-[50px] h-[50px]" />
-          <p class="text-white text-[12px] align-baseline text-center">
-            WalletConnect
-          </p>
-        </div>
-        <div class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
-          <img src="../assets/img/opera.png" alt="opera" class="mb-1 w-[50px] h-[50px]" />
-          <p class="text-white text-[12px] align-baseline text-center">
-            Opera Wallet
-          </p>
-        </div>
-        <div class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
-          <img src="../assets/img/brave.png" alt="brave" class="mb-1 w-[50px] h-[50px]" />
-          <p class="text-white text-[12px] align-baseline text-center">
-            Brave Wallet
-          </p>
-        </div>
-        <div class="hover:opacity-[0.65] transition-opacity ease-in-out delay-100 w-[90px] h-auto rounded-2xl flex justify-center items-center flex-col relative align-baseline">
-          <!-- <img src="../assets/img/three-small-dots.svg" alt="dots" class="mb-1 w-[50px] h-[50px]" /> -->
-          <div class="mb-1 w-[50px] h-[50px] bg-black flex justify-center items-center rounded-xl">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="rounded-xl bg-transparent bi bi-three-dots" viewBox="0 0 16 16">
-            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+        <div class="px-[48px]"></div>
+      </div>
+      <div class="flex flex-col flex-1 justify-center items-center mx-[24px] gap-[24px]">
+        <h3 class="text-[20px] font-semibold text-mainPurple">Haven’t got a wallet yet?</h3>
+        <img src="../assets/img/wallet_intro.png" class="w-[198px] h-[178px]" alt="walletIntro">
+        <button
+          class="leading-normal tracking-[0.03em] px-[24px] h-[48px] flex justify-center items-center text-[16px] font-semibold bg-colorsTertiary rounded-[16px] hover:decoration-solid hover:bg-colorsTertiaryHover transition-colors ease-out delay-75">Learn
+          how to connect
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+            class="ml-2 bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5" />
+            <path fill-rule="evenodd"
+              d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z" />
           </svg>
-        </div>
-          <p class="text-white text-[12px] align-baseline text-center">
-            More
-          </p>
-        </div>
+        </button>
       </div>
-    </div>
-      <div class="px-[48px]"></div>
-    </div>
-    <div class="flex flex-col flex-1 justify-center items-center mx-[24px] gap-[24px]">
-      <h3 class="text-[20px] font-semibold text-mainPurple">Haven’t got a wallet yet?</h3>
-      <img src="../assets/img/wallet_intro.png" class="w-[198px] h-[178px]" alt="walletIntro">
-      <button class="leading-normal tracking-[0.03em] px-[24px] h-[48px] flex justify-center items-center text-[16px] font-semibold bg-colorsTertiary rounded-[16px] hover:decoration-solid hover:bg-colorsTertiaryHover transition-colors ease-out delay-75">Learn how to connect 
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="ml-2 bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
-        <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
-      </svg>
-    </button>
-    </div>
     </div>
   </div>
 
   <!-- HEADER -->
+
+
+  <!-- SLIDER -->
+
+  <div class="w-full flex items-center justify-center flex-col flex-wrap">
+    <div
+      class="-z-0 mb-[100px] relative mt-[48px] slider lg:w-[1168px] h-[200px] rounded-[30px] flex justify-center items-center border border-black border-solid bg-firstBanner bg-cover bg-center" id="background">
+      <div id="containerInfo" class="relative w-[1168px] flex h-full">
+        <div class="w-[50%] h-full py-[16px] pl-[24px] flex items-center">
+          <div class="flex flex-col gap-[14px]">
+            <div class="flex gap-[8px]"><img width="20px" src="../assets/img/pancakeswap-logo.png" alt=""
+                class="h-[20px]">
+              <p class="text-[16px] font-semibold text-colorWhite" id="logoTitle">PancakeSwap</p><img id="secLogo" class="w-[98px] h-[20px]"
+                src="../assets/img/nemesis.png" alt="">
+            </div>
+            <div class="flex gap-[4px]">
+              <h3 class=" text-shadow text-[28px] font-semibold leading-[30px]" id="description">Nemesis Downfall Now Live on PancakeSwap
+                Gaming Marketplace</h3>
+            </div>
+            <div class="flex items-center gap-[8px]"><button id="mbb" class="justify-center items-center rounded-[16px] flex gap-2 text-[16px] font-semibold text-colorWhite px-[24px] h-[48px]">Play Now <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                  height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5" />
+                  <path fill-rule="evenodd"
+                    d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z" />
+                </svg></button>
+                <a href="" class="text-[16px] text-colorWhite font-semibold" id="link">Learn More</a>
+              </div>
+          </div>
+          <!-- <h1 class="logoTitle animate__animated animate__fadeInRight">prova</h1>
+
+          <h2 class="titleSlider animate__animated animate__fadeInRight">prova</h2>
+
+          <button class="btnSlider animate__animated animate__fadeInRight">prova</button> -->
+        </div>
+        <div class="w-[50%] relative">
+          <div class="w-[99px] h-[99px] absolute top-[-20px] left-[10%] animate-custom-bounce">
+          <img class="w-[99px] h-[99px]" src="https://assets.pancakeswap.finance/web/banners/nemesis-downfall/floating-item.png" alt="">
+        </div>
+          <img class="w-auto h-[224px] absolute bottom-0 left-[12%]" id="imgRight" src="https://assets.pancakeswap.finance/web/banners/nemesis-downfall/bg-desktop.png" alt="">
+        </div>
+      </div>
+      <div class="z-[100] absolute left-[45%] top-[170px]  w-[108px] h-[8px] rounded-r-[24px] rounded-l-[24px] flex">
+        <button class="buttonSlider rounded-l-[24px] cursor basis-[108px] bg-white opacity-35 active:opacity-100" data-key="slide1"></button>
+
+        <button class="buttonSlider cursor basis-[108px] bg-white opacity-35 active:opacity-100" data-key="slide2"></button>
+
+        <button class="buttonSlider cursor basis-[108px] bg-white opacity-35 active:opacity-100" data-key="slide3"></button>
+
+        <button class="buttonSlider cursor basis-[108px] bg-white opacity-35 active:opacity-100" data-key="slide4"></button>
+
+        <button class="buttonSlider cursor basis-[108px] bg-white opacity-35 active:opacity-100" data-key="slide5"></button>
+
+        <button class="buttonSlider rounded-r-[24px] cursor basis-[108px] bg-white opacity-35 active:opacity-100" data-key="slide6"></button>
+      </div>
+      <!-- <div class="flex self-end justify-self-center absolute w-full ">
+        
+      </div> -->
+    </div>
+
+    <div class="max-w-[1168px] flex justify-center items-center p-[16px]">
+      <div class="w-[569px] flex flex-col pl-[30px] relative">
+        <h1 class="mb-[16px] leading-[110%] text-[88px] font-[#f4eeff] font-semibold text-[#f4eeff]">Everyone's <span
+            class="text-colorsSecondary">Favorite</span> DEX</h1>
+        <h2 class="text-[#b8add2] text-[24px] font-semibold">Trade, earn, and own crypto on the all-in-one multichain
+          DEX</h2>
+      </div>
+      <div class="w-[569px] h-[569px] relative -z-20">
+        <video loop autoplay="" muted playsinline="" class="absolute w-[1080px] overflow-auto">
+          <source src="https://assets.pancakeswap.finance/web/landing/bunnyv2.webm" type="video/webm"
+            class="jsx-17b87fe7f0af5ff">
+        </video>
+        <video width="1080" autoplay="" muted loop="" playsinline="" class="absolute sc-fJoDng fEutNl">
+          <source src="https://assets.pancakeswap.finance/web/landing/star.webm" type="video/webm"
+            class="jsx-17b87fe7f0af5ff">
+        </video>
+        <video width="1080" autoplay="" muted loop="" playsinline="" class="absolute sc-fJoDng fEutNl">
+          <source src="https://assets.pancakeswap.finance/web/landing/hero-cake.webm" type="video/webm"
+            class="jsx-17b87fe7f0af5ff">
+        </video>
+        <video width="1080" autoplay="" muted loop="" playsinline="" class="absolute sc-fJoDng fEutNl">
+          <source src="https://assets.pancakeswap.finance/web/landing/rock01.webm" type="video/webm"
+            class="jsx-17b87fe7f0af5ff">
+        </video>
+        <video width="1080" autoplay="" muted loop="" playsinline="" class="absolute sc-fJoDng fEutNl">
+          <source src="https://assets.pancakeswap.finance/web/landing/rock02.webm" type="video/webm"
+            class="jsx-17b87fe7f0af5ff">
+        </video>
+        <video width="1080" autoplay="" muted loop="" playsinline="" class="absolute sc-fJoDng fEutNl">
+          <source src="https://assets.pancakeswap.finance/web/landing/rock03.webm" type="video/webm"
+            class="jsx-17b87fe7f0af5ff">
+        </video>
+      </div>
+    </div>
+    <div class="w-full absolute bottom-[-375px] -z-40">
+      <svg viewBox="0 0 1660 339" class="relative left-[-3px] top-0w-full box-border sc-grXZZQ ktVOoD slide-svg-dark"
+        color="text" xmlns="http://www.w3.org/2000/svg">
+        <path class="max-w-[100%]"
+          d="M804 166.523C520.5 166.523 267.5 290.022 0 304V338.5H1660V0C1358.83 0 1104 166.523 804 166.523Z"
+          fill="url(#paint0_linear_dark)"></path>
+        <defs>
+          <linearGradient id="paint0_linear_dark" x1="830" y1="83.5" x2="830" y2="338.5" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#08060B" stop-opacity="0.2"></stop>
+            <stop offset="0.545554" stop-color="#08060B" stop-opacity="0.5"></stop>
+            <stop offset="1" stop-color="#08060B"></stop>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+
+    <div
+      class="-mt-[8px] w-full bg-gradient-to-b from-[#09070d] to-[#201335] text-center font-semibold py-[48px] flex flex-col justify-center items-center">
+      <div class="w-[1168px] flex flex-col justify-center items-center pt-[48px]">
+        <div class="flex flex-col justify-center items-center text-colorWhite text-[32px]">
+          <h2 class="leading-[110%] mb-[4px]">Shaping the Future of Decentralized Trading:</h2>
+          <h2 class="leading-[110%] mb-[42px]">PancakeSwap’s Unstoppable Expansion</h2>
+        </div>
+        <div class="flex justify-center items-center gap-[50px] mb-[48px]">
+          <div class="flex flex-col justify-center items-center">
+            <p class="text-colorWhite text-[20px]">Total Users:</p>
+            <p class="text-[40px] font-semibold text-colorsSecondary">1,467,703</p>
+            <p class="text-[16px] text-[#b8add2]">in the last 30 days</p>
+          </div>
+          <div class="flex flex-col justify-center items-center">
+            <p class="text-colorWhite text-[20px]">Total Trades:</p>
+            <p class="text-[40px] font-semibold text-colorsSecondary">17,967,220</p>
+            <p class="text-[16px] text-[#b8add2]">in the last 30 days</p>
+          </div>
+          <div class="flex flex-col justify-center items-center">
+            <p class="text-colorWhite text-[20px]">Total Value Locked:</p>
+            <p class="text-[40px] font-semibold text-colorsSecondary">$1,916,905,786</p>
+            <p class="text-[16px] text-[#b8add2]">in the last 30 days</p>
+          </div>
+        </div>
+
+        <!-- INFINITE SCROLL -->
+
+
+        <div class="h-[46px] relative w-[1068px] flex-row justify-between overflow-hidden scroll-parent"
+          style=" mask-image: linear-gradient(to left, transparent, black 80px, black calc(100% - 80px), transparent);">
+          <div class="w-full relative flex ">
+            <div class="relative min-w-[1571px] top-0 flex flex-row items-center gap-3 scroll-element">
+              
+              <div
+                class="bg-[#f0b90b] text-black h-[46px]  flex justify-center items-center w-fit rounded-[25px]  py-[12px] px-[24px]">
+                <div class="float-start mr-1">
+                  <svg viewBox="0 0 40 40" color="text" width="20px" xmlns="http://www.w3.org/2000/svg" class="">
+                    <path fill="black"
+                      d="M14.2487 9.59637L10.7888 7.58546L20.1999 2.08337L29.6387 7.58546L26.1787 9.59637L20.1999 6.13313L14.2487 9.59637ZM32.1022 13.0596V17.1094L35.5622 15.0985V11.0487L32.1022 9.00986L28.6422 11.0208L32.1022 13.0596ZM16.7399 11.0487L20.1999 13.0596L23.6599 11.0487L20.1999 9.00986L16.7399 11.0487ZM29.6387 14.5119L26.1787 12.501L20.1999 15.9643L14.2487 12.501L10.7888 14.5119V18.5617L16.7399 22.0249V28.9514L20.1999 30.9623L23.6599 28.9514V22.0249L29.6387 18.5617V14.5119ZM32.1022 26.9405L26.1511 30.4038V34.4535L35.5899 28.9514V17.9752L32.1022 20.014V26.9405ZM26.1511 27.527L29.611 25.5161V21.4384L26.1511 23.4493V27.527ZM16.7399 31.8561V35.9058L20.1999 37.9168L23.6599 35.9058V31.8561L20.1999 33.867L16.7399 31.8561ZM4.80992 15.0985L8.2699 17.1094V13.0596L11.7299 11.0487L8.29758 9.00986L4.8376 11.0208V15.0985H4.80992ZM8.29758 20.014L4.8376 18.0031V28.9794L14.2764 34.4814V30.4317L8.29758 26.9405V20.014ZM14.2487 23.4773L10.7888 21.4664V25.5161L14.2487 27.527V23.4773Z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="float-end text-[20px] font-semibold">BNB Chain</div>
+              </div>
+              
+              <div
+                class="bg-[#333333] text-[#f0b90b] flex justify-center items-center h-[46px] w-fit rounded-[25px] py-[12px] px-[24px]">
+                <div width="26px" class="float-start mr-1">
+                  <svg viewBox="0 0 40 40" color="invertedContrast" width="26px" xmlns="http://www.w3.org/2000/svg"
+                    class="">
+                    <path fill="#F1BA0D"
+                      d="M14.2487 9.59637L10.7888 7.58546L20.1999 2.08337L29.6387 7.58546L26.1787 9.59637L20.1999 6.13313L14.2487 9.59637ZM32.1022 13.0596V17.1094L35.5622 15.0985V11.0487L32.1022 9.00986L28.6422 11.0208L32.1022 13.0596ZM16.7399 11.0487L20.1999 13.0596L23.6599 11.0487L20.1999 9.00986L16.7399 11.0487ZM29.6387 14.5119L26.1787 12.501L20.1999 15.9643L14.2487 12.501L10.7888 14.5119V18.5617L16.7399 22.0249V28.9514L20.1999 30.9623L23.6599 28.9514V22.0249L29.6387 18.5617V14.5119ZM32.1022 26.9405L26.1511 30.4038V34.4535L35.5899 28.9514V17.9752L32.1022 20.014V26.9405ZM26.1511 27.527L29.611 25.5161V21.4384L26.1511 23.4493V27.527ZM16.7399 31.8561V35.9058L20.1999 37.9168L23.6599 35.9058V31.8561L20.1999 33.867L16.7399 31.8561ZM4.80992 15.0985L8.2699 17.1094V13.0596L11.7299 11.0487L8.29758 9.00986L4.8376 11.0208V15.0985H4.80992ZM8.29758 20.014L4.8376 18.0031V28.9794L14.2764 34.4814V30.4317L8.29758 26.9405V20.014ZM14.2487 23.4773L10.7888 21.4664V25.5161L14.2487 27.527V23.4773Z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="float-end text-[20px] font-semibold">opBNB Chain</div>
+              </div>
+              
+              <div
+                class="bg-[#17ba92] text-black flex justify-center items-center h-[46px] w-fit rounded-[25px] py-[12px] px-[24px]">
+                <div width="26px" class="float-start mr-1">
+                  <svg viewBox="0 0 60 60" width="22px" color="invertedContrast" xmlns="http://www.w3.org/2000/svg"
+                    class="sc-grXZZQ hxxPRP">
+                    <path
+                      d="M46.47 20.07h-5.31a2.15 2.15 0 01-1.61-.72l-2.16-2.42a1.69 1.69 0 00-2.53 0L33 19a3.21 3.21 0 01-2.39 1.07h-29A30.26 30.26 0 000 27.48h27.42a1.78 1.78 0 001.28-.54l2.56-2.66a1.67 1.67 0 011.22-.52h.1a1.7 1.7 0 011.27.57L36 26.75a2.17 2.17 0 001.61.73H60a30.26 30.26 0 00-1.58-7.41h-12zM16.6 43.05a1.78 1.78 0 001.27-.54l2.56-2.66a1.7 1.7 0 011.22-.52h.1a1.7 1.7 0 011.25.57l2.15 2.42a2.14 2.14 0 001.62.73h30.35a29.73 29.73 0 002.47-7.48H30.47a2.17 2.17 0 01-1.62-.72l-2.15-2.43a1.69 1.69 0 00-2.53 0l-1.85 2.08a3.18 3.18 0 01-2.38 1.07H.41a29.73 29.73 0 002.47 7.48zM38.12 12a1.74 1.74 0 001.27-.54L42 8.78a1.69 1.69 0 011.22-.51h.1a1.69 1.69 0 011.27.56l2.15 2.43a2.17 2.17 0 001.62.72h5.77A30.19 30.19 0 005.92 12zM26.53 50.46h-7.89a2.17 2.17 0 01-1.64-.72l-2.15-2.43a1.71 1.71 0 00-2.53 0l-1.85 2.08a3.18 3.18 0 01-2.38 1.07H8a30.16 30.16 0 0044 0z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="float-end text-[20px] font-semibold">Aptos</div>
+              </div>
+              
+              <div
+                class="bg-[#627ad8] text-black flex justify-center items-center h-[46px] w-fit rounded-[25px] py-[12px] px-[24px]">
+                <div width="26px" class="float-start mr-1">
+                  <svg viewBox="0 0 10 14" width="16px" color="invertedContrast" xmlns="http://www.w3.org/2000/svg"
+                    class="sc-grXZZQ hxxPRP">
+                    <path d="M4.99103 0.174805V5.13368L9.18211 7.00671L4.99103 0.174805Z" fill-opacity="0.602">
+                    </path>
+                    <path d="M4.99083 0.174805L0.799744 7.00671L4.99083 5.13368V0.174805Z"></path>
+                    <path d="M4.99103 10.2201V13.5896L9.18456 7.78711L4.99103 10.2201Z" fill-opacity="0.602"></path>
+                    <path d="M4.99083 13.5896V10.2201L0.799744 7.78711L4.99083 13.5896Z"></path>
+                    <path d="M4.99103 9.4398L9.18211 7.00682L4.99103 5.13379V9.4398Z" fill-opacity="0.2">
+                    </path>
+                    <path d="M0.799744 7.00682L4.99083 9.4398V5.13379L0.799744 7.00682Z" fill-opacity="0.602">
+                    </path>
+                  </svg>
+                </div>
+                <div class="float-end text-[20px] font-semibold">Ethereum</div>
+              </div>
+              
+              <div
+                class="bg-[#ad73de] text-black flex justify-center items-center h-[46px] w-fit rounded-[25px] py-[12px] px-[24px]">
+                <div width="26px" class="float-start mr-1">
+                  <svg viewBox="0 0 60 60" width="22px" color="invertedContrast" xmlns="http://www.w3.org/2000/svg"
+                    class="sc-grXZZQ hxxPRP">
+                    <path
+                      d="M46.47 20.07h-5.31a2.15 2.15 0 01-1.61-.72l-2.16-2.42a1.69 1.69 0 00-2.53 0L33 19a3.21 3.21 0 01-2.39 1.07h-29A30.26 30.26 0 000 27.48h27.42a1.78 1.78 0 001.28-.54l2.56-2.66a1.67 1.67 0 011.22-.52h.1a1.7 1.7 0 011.27.57L36 26.75a2.17 2.17 0 001.61.73H60a30.26 30.26 0 00-1.58-7.41h-12zM16.6 43.05a1.78 1.78 0 001.27-.54l2.56-2.66a1.7 1.7 0 011.22-.52h.1a1.7 1.7 0 011.25.57l2.15 2.42a2.14 2.14 0 001.62.73h30.35a29.73 29.73 0 002.47-7.48H30.47a2.17 2.17 0 01-1.62-.72l-2.15-2.43a1.69 1.69 0 00-2.53 0l-1.85 2.08a3.18 3.18 0 01-2.38 1.07H.41a29.73 29.73 0 002.47 7.48zM38.12 12a1.74 1.74 0 001.27-.54L42 8.78a1.69 1.69 0 011.22-.51h.1a1.69 1.69 0 011.27.56l2.15 2.43a2.17 2.17 0 001.62.72h5.77A30.19 30.19 0 005.92 12zM26.53 50.46h-7.89a2.17 2.17 0 01-1.64-.72l-2.15-2.43a1.71 1.71 0 00-2.53 0l-1.85 2.08a3.18 3.18 0 01-2.38 1.07H8a30.16 30.16 0 0044 0z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="float-end text-[20px] font-semibold">Polygon zkEVM</div>
+              </div>
+              <!-- 6 -->
+              <div
+                class="bg-[#686ea7] text-black flex justify-center items-center h-[46px] w-fit rounded-[25px] py-[12px] px-[24px]">
+                <div width="26px" class="float-start mr-1">
+                  <svg viewBox="0 0 60 60" width="22px" color="invertedContrast" xmlns="http://www.w3.org/2000/svg"
+                    class="sc-grXZZQ hxxPRP">
+                    <path
+                      d="M46.47 20.07h-5.31a2.15 2.15 0 01-1.61-.72l-2.16-2.42a1.69 1.69 0 00-2.53 0L33 19a3.21 3.21 0 01-2.39 1.07h-29A30.26 30.26 0 000 27.48h27.42a1.78 1.78 0 001.28-.54l2.56-2.66a1.67 1.67 0 011.22-.52h.1a1.7 1.7 0 011.27.57L36 26.75a2.17 2.17 0 001.61.73H60a30.26 30.26 0 00-1.58-7.41h-12zM16.6 43.05a1.78 1.78 0 001.27-.54l2.56-2.66a1.7 1.7 0 011.22-.52h.1a1.7 1.7 0 011.25.57l2.15 2.42a2.14 2.14 0 001.62.73h30.35a29.73 29.73 0 002.47-7.48H30.47a2.17 2.17 0 01-1.62-.72l-2.15-2.43a1.69 1.69 0 00-2.53 0l-1.85 2.08a3.18 3.18 0 01-2.38 1.07H.41a29.73 29.73 0 002.47 7.48zM38.12 12a1.74 1.74 0 001.27-.54L42 8.78a1.69 1.69 0 011.22-.51h.1a1.69 1.69 0 011.27.56l2.15 2.43a2.17 2.17 0 001.62.72h5.77A30.19 30.19 0 005.92 12zM26.53 50.46h-7.89a2.17 2.17 0 01-1.64-.72l-2.15-2.43a1.71 1.71 0 00-2.53 0l-1.85 2.08a3.18 3.18 0 01-2.38 1.07H8a30.16 30.16 0 0044 0z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="float-end text-[20px] font-semibold">zkSync Era</div>
+              </div>
+              
+              <div
+                class="bg-[#6e89ae] dark:bg-[]  text-black flex justify-center items-center h-[46px] w-fit rounded-[25px] py-[12px] px-[24px]">
+                <div width="26px" class="float-start mr-1">
+                  <svg viewBox="0 0 20 22" xmlns="http://www.w3.org/2000/svg" width="20px" color="invertedContrast"
+                    class="sc-grXZZQ hxxPRP">
+                    <path
+                      d="M10.0333 1.36361C10.087 1.36361 10.1407 1.37808 10.1889 1.40521L18.45 6.09817C18.5463 6.15242 18.6055 6.25369 18.6037 6.36039L18.5722 15.6939C18.5722 15.8024 18.513 15.9018 18.4167 15.9561L10.1241 20.5966C10.0778 20.6237 10.0222 20.6364 9.96852 20.6364C9.91481 20.6364 9.86111 20.6219 9.81296 20.5948L1.55186 15.9018C1.45556 15.8476 1.3963 15.7463 1.39815 15.6396L1.42964 6.30614C1.42964 6.19763 1.4889 6.09817 1.58519 6.04391L9.87778 1.4034C9.92407 1.37627 9.97778 1.36361 10.0333 1.36361ZM10.037 3.2297e-05C9.74259 -0.00177616 9.44815 0.0723708 9.18333 0.220665L0.890748 4.85937C0.361119 5.15596 0.0351931 5.70392 0.0314893 6.30071L7.89425e-06 15.6342C-0.00184396 16.2292 0.32223 16.7807 0.848155 17.081L9.10926 21.7739C9.37222 21.924 9.66667 21.9982 9.96296 22C10.2574 22.0018 10.5519 21.9276 10.8167 21.7793L19.1093 17.1388C19.6389 16.8422 19.9648 16.2943 19.9685 15.6975L20 6.36582C20.0018 5.77083 19.6778 5.21925 19.1518 4.91905L10.8907 0.22609C10.6259 0.0759877 10.3315 3.2297e-05 10.037 3.2297e-05Z">
+                    </path>
+                    <path
+                      d="M11.711 5.08594H10.4999C10.4091 5.08594 10.3277 5.142 10.2962 5.22519L6.40359 15.6492C6.37767 15.7179 6.42952 15.7902 6.50544 15.7902H7.71655C7.80729 15.7902 7.88878 15.7342 7.92026 15.651L11.8147 5.22519C11.8369 5.15828 11.7851 5.08594 11.711 5.08594ZM9.59248 5.08594H8.38137C8.29063 5.08594 8.20915 5.142 8.17766 5.22519L4.28507 15.6492C4.25915 15.7179 4.311 15.7902 4.38693 15.7902H5.59804C5.68878 15.7902 5.77026 15.7342 5.80174 15.651L9.69618 5.22519C9.72025 5.15828 9.6684 5.08594 9.59248 5.08594ZM11.161 9.12785C11.1258 9.03562 10.9925 9.03562 10.9573 9.12785L10.3277 10.8133C10.311 10.8604 10.311 10.911 10.3277 10.958L12.0814 15.6528C12.1128 15.736 12.1943 15.792 12.2851 15.792H13.4962C13.5721 15.792 13.624 15.7197 13.598 15.651L11.161 9.12785ZM15.7147 15.6492L12.2203 6.29399C12.1851 6.20176 12.0517 6.20176 12.0166 6.29399L11.3869 7.97948C11.3703 8.0265 11.3703 8.07713 11.3869 8.12415L14.1999 15.6528C14.2314 15.736 14.3128 15.792 14.4036 15.792H15.6147C15.6869 15.7902 15.7406 15.7179 15.7147 15.6492Z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="float-end text-[20px] font-semibold">Arbitrum One</div>
+              </div>
+              
+              <div
+                class="bg-[#81d8ea] dark:bg-[]  text-black flex justify-center items-center h-[46px] w-fit rounded-[25px] py-[12px] px-[24px]">
+                <div width="26px" class="float-start mr-1">
+                  <svg viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" width="18px" color="invertedContrast"
+                    class="sc-grXZZQ hxxPRP">
+                    <path d="M12 14H0V2H3V11H12V14Z"></path>
+                    <path
+                      d="M12.0002 4C13.1045 4 14 3.10457 14 2C14 0.895432 13.1045 0 12.0002 0C10.8955 0 10 0.895432 10 2C10 3.10457 10.8955 4 12.0002 4Z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="float-end text-[20px] font-semibold">Linea</div>
+              </div>
+              
+              <div
+                class="bg-[#75a1ff] dark:bg-[]  text-black flex justify-center items-center h-[46px] w-fit rounded-[25px] py-[12px] px-[24px]">
+                <div width="26px" class="float-start mr-1">
+                  <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" color="text" width="20px"
+                    class="sc-grXZZQ ktVOoD">
+                    <path fill="white" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M10 16.25C13.4518 16.25 16.25 13.4518 16.25 10C16.25 6.54822 13.4518 3.75 10 3.75C6.54822 3.75 3.75 6.54822 3.75 10C3.75 13.4518 6.54822 16.25 10 16.25ZM10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z">
+                    </path>
+                    <path fill="white" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M11.875 10.625H0V9.375H11.875V10.625Z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="float-end text-[20px] font-semibold">Base</div>
+              </div>
+
+
+            </div>
+            <div class=" ml-2 relative min-w-[1571px] top-0 flex flex-row items-center gap-3 scroll-element">
+              
+              <div
+                class="bg-[#f0b90b] text-black h-[46px]  flex justify-center items-center w-fit rounded-[25px]  py-[12px] px-[24px]">
+                <div class="float-start mr-1">
+                  <svg viewBox="0 0 40 40" color="text" width="20px" xmlns="http://www.w3.org/2000/svg" class="">
+                    <path fill="black"
+                      d="M14.2487 9.59637L10.7888 7.58546L20.1999 2.08337L29.6387 7.58546L26.1787 9.59637L20.1999 6.13313L14.2487 9.59637ZM32.1022 13.0596V17.1094L35.5622 15.0985V11.0487L32.1022 9.00986L28.6422 11.0208L32.1022 13.0596ZM16.7399 11.0487L20.1999 13.0596L23.6599 11.0487L20.1999 9.00986L16.7399 11.0487ZM29.6387 14.5119L26.1787 12.501L20.1999 15.9643L14.2487 12.501L10.7888 14.5119V18.5617L16.7399 22.0249V28.9514L20.1999 30.9623L23.6599 28.9514V22.0249L29.6387 18.5617V14.5119ZM32.1022 26.9405L26.1511 30.4038V34.4535L35.5899 28.9514V17.9752L32.1022 20.014V26.9405ZM26.1511 27.527L29.611 25.5161V21.4384L26.1511 23.4493V27.527ZM16.7399 31.8561V35.9058L20.1999 37.9168L23.6599 35.9058V31.8561L20.1999 33.867L16.7399 31.8561ZM4.80992 15.0985L8.2699 17.1094V13.0596L11.7299 11.0487L8.29758 9.00986L4.8376 11.0208V15.0985H4.80992ZM8.29758 20.014L4.8376 18.0031V28.9794L14.2764 34.4814V30.4317L8.29758 26.9405V20.014ZM14.2487 23.4773L10.7888 21.4664V25.5161L14.2487 27.527V23.4773Z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="float-end text-[20px] font-semibold">BNB Chain</div>
+              </div>
+              
+              <div
+                class="bg-[#333333] text-[#f0b90b] flex justify-center items-center h-[46px] w-fit rounded-[25px] py-[12px] px-[24px]">
+                <div width="26px" class="float-start mr-1">
+                  <svg viewBox="0 0 40 40" color="invertedContrast" width="26px" xmlns="http://www.w3.org/2000/svg"
+                    class="">
+                    <path fill="#F1BA0D"
+                      d="M14.2487 9.59637L10.7888 7.58546L20.1999 2.08337L29.6387 7.58546L26.1787 9.59637L20.1999 6.13313L14.2487 9.59637ZM32.1022 13.0596V17.1094L35.5622 15.0985V11.0487L32.1022 9.00986L28.6422 11.0208L32.1022 13.0596ZM16.7399 11.0487L20.1999 13.0596L23.6599 11.0487L20.1999 9.00986L16.7399 11.0487ZM29.6387 14.5119L26.1787 12.501L20.1999 15.9643L14.2487 12.501L10.7888 14.5119V18.5617L16.7399 22.0249V28.9514L20.1999 30.9623L23.6599 28.9514V22.0249L29.6387 18.5617V14.5119ZM32.1022 26.9405L26.1511 30.4038V34.4535L35.5899 28.9514V17.9752L32.1022 20.014V26.9405ZM26.1511 27.527L29.611 25.5161V21.4384L26.1511 23.4493V27.527ZM16.7399 31.8561V35.9058L20.1999 37.9168L23.6599 35.9058V31.8561L20.1999 33.867L16.7399 31.8561ZM4.80992 15.0985L8.2699 17.1094V13.0596L11.7299 11.0487L8.29758 9.00986L4.8376 11.0208V15.0985H4.80992ZM8.29758 20.014L4.8376 18.0031V28.9794L14.2764 34.4814V30.4317L8.29758 26.9405V20.014ZM14.2487 23.4773L10.7888 21.4664V25.5161L14.2487 27.527V23.4773Z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="float-end text-[20px] font-semibold">opBNB Chain</div>
+              </div>
+              
+              <div
+                class="bg-[#17ba92] text-black flex justify-center items-center h-[46px] w-fit rounded-[25px] py-[12px] px-[24px]">
+                <div width="26px" class="float-start mr-1">
+                  <svg viewBox="0 0 60 60" width="22px" color="invertedContrast" xmlns="http://www.w3.org/2000/svg"
+                    class="sc-grXZZQ hxxPRP">
+                    <path
+                      d="M46.47 20.07h-5.31a2.15 2.15 0 01-1.61-.72l-2.16-2.42a1.69 1.69 0 00-2.53 0L33 19a3.21 3.21 0 01-2.39 1.07h-29A30.26 30.26 0 000 27.48h27.42a1.78 1.78 0 001.28-.54l2.56-2.66a1.67 1.67 0 011.22-.52h.1a1.7 1.7 0 011.27.57L36 26.75a2.17 2.17 0 001.61.73H60a30.26 30.26 0 00-1.58-7.41h-12zM16.6 43.05a1.78 1.78 0 001.27-.54l2.56-2.66a1.7 1.7 0 011.22-.52h.1a1.7 1.7 0 011.25.57l2.15 2.42a2.14 2.14 0 001.62.73h30.35a29.73 29.73 0 002.47-7.48H30.47a2.17 2.17 0 01-1.62-.72l-2.15-2.43a1.69 1.69 0 00-2.53 0l-1.85 2.08a3.18 3.18 0 01-2.38 1.07H.41a29.73 29.73 0 002.47 7.48zM38.12 12a1.74 1.74 0 001.27-.54L42 8.78a1.69 1.69 0 011.22-.51h.1a1.69 1.69 0 011.27.56l2.15 2.43a2.17 2.17 0 001.62.72h5.77A30.19 30.19 0 005.92 12zM26.53 50.46h-7.89a2.17 2.17 0 01-1.64-.72l-2.15-2.43a1.71 1.71 0 00-2.53 0l-1.85 2.08a3.18 3.18 0 01-2.38 1.07H8a30.16 30.16 0 0044 0z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="float-end text-[20px] font-semibold">Aptos</div>
+              </div>
+              
+              <div
+                class="bg-[#627ad8] text-black flex justify-center items-center h-[46px] w-fit rounded-[25px] py-[12px] px-[24px]">
+                <div width="26px" class="float-start mr-1">
+                  <svg viewBox="0 0 10 14" width="16px" color="invertedContrast" xmlns="http://www.w3.org/2000/svg"
+                    class="sc-grXZZQ hxxPRP">
+                    <path d="M4.99103 0.174805V5.13368L9.18211 7.00671L4.99103 0.174805Z" fill-opacity="0.602">
+                    </path>
+                    <path d="M4.99083 0.174805L0.799744 7.00671L4.99083 5.13368V0.174805Z"></path>
+                    <path d="M4.99103 10.2201V13.5896L9.18456 7.78711L4.99103 10.2201Z" fill-opacity="0.602"></path>
+                    <path d="M4.99083 13.5896V10.2201L0.799744 7.78711L4.99083 13.5896Z"></path>
+                    <path d="M4.99103 9.4398L9.18211 7.00682L4.99103 5.13379V9.4398Z" fill-opacity="0.2">
+                    </path>
+                    <path d="M0.799744 7.00682L4.99083 9.4398V5.13379L0.799744 7.00682Z" fill-opacity="0.602">
+                    </path>
+                  </svg>
+                </div>
+                <div class="float-end text-[20px] font-semibold">Ethereum</div>
+              </div>
+              
+              <div
+                class="bg-[#ad73de] text-black flex justify-center items-center h-[46px] w-fit rounded-[25px] py-[12px] px-[24px]">
+                <div width="26px" class="float-start mr-1">
+                  <svg viewBox="0 0 60 60" width="22px" color="invertedContrast" xmlns="http://www.w3.org/2000/svg"
+                    class="sc-grXZZQ hxxPRP">
+                    <path
+                      d="M46.47 20.07h-5.31a2.15 2.15 0 01-1.61-.72l-2.16-2.42a1.69 1.69 0 00-2.53 0L33 19a3.21 3.21 0 01-2.39 1.07h-29A30.26 30.26 0 000 27.48h27.42a1.78 1.78 0 001.28-.54l2.56-2.66a1.67 1.67 0 011.22-.52h.1a1.7 1.7 0 011.27.57L36 26.75a2.17 2.17 0 001.61.73H60a30.26 30.26 0 00-1.58-7.41h-12zM16.6 43.05a1.78 1.78 0 001.27-.54l2.56-2.66a1.7 1.7 0 011.22-.52h.1a1.7 1.7 0 011.25.57l2.15 2.42a2.14 2.14 0 001.62.73h30.35a29.73 29.73 0 002.47-7.48H30.47a2.17 2.17 0 01-1.62-.72l-2.15-2.43a1.69 1.69 0 00-2.53 0l-1.85 2.08a3.18 3.18 0 01-2.38 1.07H.41a29.73 29.73 0 002.47 7.48zM38.12 12a1.74 1.74 0 001.27-.54L42 8.78a1.69 1.69 0 011.22-.51h.1a1.69 1.69 0 011.27.56l2.15 2.43a2.17 2.17 0 001.62.72h5.77A30.19 30.19 0 005.92 12zM26.53 50.46h-7.89a2.17 2.17 0 01-1.64-.72l-2.15-2.43a1.71 1.71 0 00-2.53 0l-1.85 2.08a3.18 3.18 0 01-2.38 1.07H8a30.16 30.16 0 0044 0z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="float-end text-[20px] font-semibold">Polygon zkEVM</div>
+              </div>
+              
+              <div
+                class="bg-[#686ea7] text-black flex justify-center items-center h-[46px] w-fit rounded-[25px] py-[12px] px-[24px]">
+                <div width="26px" class="float-start mr-1">
+                  <svg viewBox="0 0 60 60" width="22px" color="invertedContrast" xmlns="http://www.w3.org/2000/svg"
+                    class="sc-grXZZQ hxxPRP">
+                    <path
+                      d="M46.47 20.07h-5.31a2.15 2.15 0 01-1.61-.72l-2.16-2.42a1.69 1.69 0 00-2.53 0L33 19a3.21 3.21 0 01-2.39 1.07h-29A30.26 30.26 0 000 27.48h27.42a1.78 1.78 0 001.28-.54l2.56-2.66a1.67 1.67 0 011.22-.52h.1a1.7 1.7 0 011.27.57L36 26.75a2.17 2.17 0 001.61.73H60a30.26 30.26 0 00-1.58-7.41h-12zM16.6 43.05a1.78 1.78 0 001.27-.54l2.56-2.66a1.7 1.7 0 011.22-.52h.1a1.7 1.7 0 011.25.57l2.15 2.42a2.14 2.14 0 001.62.73h30.35a29.73 29.73 0 002.47-7.48H30.47a2.17 2.17 0 01-1.62-.72l-2.15-2.43a1.69 1.69 0 00-2.53 0l-1.85 2.08a3.18 3.18 0 01-2.38 1.07H.41a29.73 29.73 0 002.47 7.48zM38.12 12a1.74 1.74 0 001.27-.54L42 8.78a1.69 1.69 0 011.22-.51h.1a1.69 1.69 0 011.27.56l2.15 2.43a2.17 2.17 0 001.62.72h5.77A30.19 30.19 0 005.92 12zM26.53 50.46h-7.89a2.17 2.17 0 01-1.64-.72l-2.15-2.43a1.71 1.71 0 00-2.53 0l-1.85 2.08a3.18 3.18 0 01-2.38 1.07H8a30.16 30.16 0 0044 0z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="float-end text-[20px] font-semibold">zkSync Era</div>
+              </div>
+              
+              <div
+                class="bg-[#6e89ae] dark:bg-[]  text-black flex justify-center items-center h-[46px] w-fit rounded-[25px] py-[12px] px-[24px]">
+                <div width="26px" class="float-start mr-1">
+                  <svg viewBox="0 0 20 22" xmlns="http://www.w3.org/2000/svg" width="20px" color="invertedContrast"
+                    class="sc-grXZZQ hxxPRP">
+                    <path
+                      d="M10.0333 1.36361C10.087 1.36361 10.1407 1.37808 10.1889 1.40521L18.45 6.09817C18.5463 6.15242 18.6055 6.25369 18.6037 6.36039L18.5722 15.6939C18.5722 15.8024 18.513 15.9018 18.4167 15.9561L10.1241 20.5966C10.0778 20.6237 10.0222 20.6364 9.96852 20.6364C9.91481 20.6364 9.86111 20.6219 9.81296 20.5948L1.55186 15.9018C1.45556 15.8476 1.3963 15.7463 1.39815 15.6396L1.42964 6.30614C1.42964 6.19763 1.4889 6.09817 1.58519 6.04391L9.87778 1.4034C9.92407 1.37627 9.97778 1.36361 10.0333 1.36361ZM10.037 3.2297e-05C9.74259 -0.00177616 9.44815 0.0723708 9.18333 0.220665L0.890748 4.85937C0.361119 5.15596 0.0351931 5.70392 0.0314893 6.30071L7.89425e-06 15.6342C-0.00184396 16.2292 0.32223 16.7807 0.848155 17.081L9.10926 21.7739C9.37222 21.924 9.66667 21.9982 9.96296 22C10.2574 22.0018 10.5519 21.9276 10.8167 21.7793L19.1093 17.1388C19.6389 16.8422 19.9648 16.2943 19.9685 15.6975L20 6.36582C20.0018 5.77083 19.6778 5.21925 19.1518 4.91905L10.8907 0.22609C10.6259 0.0759877 10.3315 3.2297e-05 10.037 3.2297e-05Z">
+                    </path>
+                    <path
+                      d="M11.711 5.08594H10.4999C10.4091 5.08594 10.3277 5.142 10.2962 5.22519L6.40359 15.6492C6.37767 15.7179 6.42952 15.7902 6.50544 15.7902H7.71655C7.80729 15.7902 7.88878 15.7342 7.92026 15.651L11.8147 5.22519C11.8369 5.15828 11.7851 5.08594 11.711 5.08594ZM9.59248 5.08594H8.38137C8.29063 5.08594 8.20915 5.142 8.17766 5.22519L4.28507 15.6492C4.25915 15.7179 4.311 15.7902 4.38693 15.7902H5.59804C5.68878 15.7902 5.77026 15.7342 5.80174 15.651L9.69618 5.22519C9.72025 5.15828 9.6684 5.08594 9.59248 5.08594ZM11.161 9.12785C11.1258 9.03562 10.9925 9.03562 10.9573 9.12785L10.3277 10.8133C10.311 10.8604 10.311 10.911 10.3277 10.958L12.0814 15.6528C12.1128 15.736 12.1943 15.792 12.2851 15.792H13.4962C13.5721 15.792 13.624 15.7197 13.598 15.651L11.161 9.12785ZM15.7147 15.6492L12.2203 6.29399C12.1851 6.20176 12.0517 6.20176 12.0166 6.29399L11.3869 7.97948C11.3703 8.0265 11.3703 8.07713 11.3869 8.12415L14.1999 15.6528C14.2314 15.736 14.3128 15.792 14.4036 15.792H15.6147C15.6869 15.7902 15.7406 15.7179 15.7147 15.6492Z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="float-end text-[20px] font-semibold">Arbitrum One</div>
+              </div>
+              
+              <div
+                class="bg-[#81d8ea] dark:bg-[]  text-black flex justify-center items-center h-[46px] w-fit rounded-[25px] py-[12px] px-[24px]">
+                <div width="26px" class="float-start mr-1">
+                  <svg viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" width="18px" color="invertedContrast"
+                    class="sc-grXZZQ hxxPRP">
+                    <path d="M12 14H0V2H3V11H12V14Z"></path>
+                    <path
+                      d="M12.0002 4C13.1045 4 14 3.10457 14 2C14 0.895432 13.1045 0 12.0002 0C10.8955 0 10 0.895432 10 2C10 3.10457 10.8955 4 12.0002 4Z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="float-end text-[20px] font-semibold">Linea</div>
+              </div>
+              
+              <div
+                class="bg-[#75a1ff] dark:bg-[]  text-black flex justify-center items-center h-[46px] w-fit rounded-[25px] py-[12px] px-[24px]">
+                <div width="26px" class="float-start mr-1">
+                  <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" color="text" width="20px"
+                    class="sc-grXZZQ ktVOoD">
+                    <path fill="white" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M10 16.25C13.4518 16.25 16.25 13.4518 16.25 10C16.25 6.54822 13.4518 3.75 10 3.75C6.54822 3.75 3.75 6.54822 3.75 10C3.75 13.4518 6.54822 16.25 10 16.25ZM10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z">
+                    </path>
+                    <path fill="white" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M11.875 10.625H0V9.375H11.875V10.625Z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="float-end text-[20px] font-semibold">Base</div>
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+        <div class="w-full h-[468px] absolute">
+          <img class="absolute top-[150px] w-[144px] h-[168px]" alt="" aria-hidden="true"
+            src="../assets/img/bnb-ball-rocket.png">
+          <img class="bottom-[300px] absolute right-[150px] w-[80px] h-[100px]" alt="" aria-hidden="true"
+            src="../assets/img/aptos-ball-rocket.png">
+          <img class="bottom-[170px] absolute right-0 w-[116px] h-[230px]" alt="" aria-hidden="true"
+            src="../assets/img/eth-ball-rocket.png">
+        </div>
+
+      </div>
+    </div>
+
+
 </body>
 
 </html>
+<!-- src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27116%27%20height=%27230%27/%3e" -->
+<!-- <img class=" w-[144px] h-[168px]" alt="" aria-hidden="true" src="../assets/img/bnb-ball-rocket.png" > -->
+<!-- FIRST SLIDE IMG -->
+<!-- url("https://assets.pancakeswap.finance/web/banners/nemesis-downfall/bg-desktop.png") -->
+<!-- url("https://assets.pancakeswap.finance/web/banners/nemesis-downfall/floating-item.png") -->
+<!-- SECOND SLIDE IMG -->
+<!-- url("https://assets.pancakeswap.finance/web/banners/top-traders/bg-desktop.png") -->
+<!-- url("https://assets.pancakeswap.finance/web/banners/top-traders/floating-item.png") -->
+<!-- THIRD SLIDE IMG -->
+<!-- <img alt="gameBg" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgame-desktop-bg.6da793f3.png&amp;w=3840&amp;q=75" decoding="async" data-nimg="intrinsic" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;" srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgame-desktop-bg.6da793f3.png&amp;w=1200&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgame-desktop-bg.6da793f3.png&amp;w=3840&amp;q=75 2x"> -->
+<!-- <img alt="gameCube" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgame-cube.fb41a1ee.png&amp;w=128&amp;q=75" decoding="async" data-nimg="intrinsic" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;" srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgame-cube.fb41a1ee.png&amp;w=64&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgame-cube.fb41a1ee.png&amp;w=128&amp;q=75 2x"> -->
+<!-- FOURTH SLIDE IMG -->
+<!-- <img alt="Background" src="/_next/static/media/galxe-traverse-bg.fcab2d26.png" decoding="async" data-nimg="intrinsic" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"> -->
+<!-- <img alt="GalxeTraverseBunny" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgalxe-traverse-bunny.6166be6f.png&amp;w=640&amp;q=75" decoding="async" data-nimg="intrinsic" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;" srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgalxe-traverse-bunny.6166be6f.png&amp;w=384&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgalxe-traverse-bunny.6166be6f.png&amp;w=640&amp;q=75 2x"> -->
+<!-- FIFTH SLIDE IMG -->
+<!-- <img alt="webNotificationBg" src="/_next/static/media/web3-notification-bg.95e8aaef.png" decoding="async" data-nimg="intrinsic" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"> -->
+<!-- <img alt="webNotificationCheck" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fweb3-notification-check.01e850ae.png&amp;w=256&amp;q=75" decoding="async" data-nimg="intrinsic" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;" srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fweb3-notification-check.01e850ae.png&amp;w=96&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fweb3-notification-check.01e850ae.png&amp;w=256&amp;q=75 2x"> -->
+<!-- SIXTH SLIDE IMG -->
+<!-- <img alt="PerpetualBanner" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fperpetual.fd0aa080.png&amp;w=828&amp;q=75" decoding="async" data-nimg="intrinsic" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;" srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fperpetual.fd0aa080.png&amp;w=640&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fperpetual.fd0aa080.png&amp;w=828&amp;q=75 2x"> -->
+<!-- LAST SLIDE IMG -->
+<!-- <img alt="vecakeBg" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvecake-bg.e2e958a5.png&amp;w=3840&amp;q=75" decoding="async" data-nimg="intrinsic" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;" srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvecake-bg.e2e958a5.png&amp;w=1200&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvecake-bg.e2e958a5.png&amp;w=3840&amp;q=75 2x"> -->
+<!-- <img alt="vecakeRuby" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvecake-ruby.8d684b20.png&amp;w=256&amp;q=75" decoding="async" data-nimg="intrinsic" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;" srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvecake-ruby.8d684b20.png&amp;w=96&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvecake-ruby.8d684b20.png&amp;w=256&amp;q=75 2x"> -->
