@@ -22,7 +22,7 @@ const objSlider = {
         bg: "bg-secondBanner",
         bgBtn: "none",
         colorTextBtn: "#a881fc",
-        float: "https://assets.pancakeswap.finance/web/banners/top-traders/bg-desktop.png'"
+        float: "https://assets.pancakeswap.finance/web/banners/top-traders/bg-desktop.png'",
     },
     slide3: {
         logoName: "PERPETUAL FUTURES",
@@ -89,32 +89,23 @@ document.querySelectorAll(".buttonSlider").forEach(btn => {
         const link = document.querySelector("#link");
         document.querySelectorAll('.logoTitle').forEach(el => el.remove());
 
-        if (obSlider.bg) {
-          bg.classList.remove("blur-sm"); // Rimuovi la classe di sfocatura
-        }
 
         if(!secLogo){
           secLogo.style.display = "none"
         }
 
-        imgRight.src = obSlider.float
+       
 
         bg.classList.remove("bg-firstBanner", "bg-secondBanner", "bg-thirdBanner", "bg-fourthBanner", "bg-fifthBanner", "bg-sixthBanner");
         bg.classList.add(obSlider.bg);
 
-        
-        btnSlider.style.background = obSlider.bgBtn
+         imgRight.src = obSlider.float;
+
+        btnSlider.style.background = obSlider.bgBtn;
 
         titleSlider.style.color = obSlider.colorTitle;
 
         btnSlider.style.color = obSlider.colorTextBtn;
-       
-   
-      
-       
-
-
-        console.log(logoTitle);
 
        
         titleSlider.innerText = obSlider.title;
@@ -123,11 +114,7 @@ document.querySelectorAll(".buttonSlider").forEach(btn => {
         logoTitle.innerHTML = obSlider.logoName;
         secLogo.src = obSlider.secLogo;
         link.innerText = obSlider.link;
-
-
-        console.log(logoTitle)
     })
-
 })
 
 const toggleMenu = (Id) => {
@@ -135,14 +122,6 @@ const toggleMenu = (Id) => {
     menu.classList.toggle("hidden");
     menu.classList.toggle("flex");
 }
-
-// const toggleSetting = () => {
-//     const settingButton = document.querySelector('.settingButton');
-//     settingButton.classList.toggle("text-colorsPrimary");
-//     settingButton.classList.toggle("bg-navLinkHover");
-//     settingButton.classList.toggle("text-black");
-//     settingButton.classList.toggle("bg-colorsPrimary");
-// }
 
 function toggleSetting(btnId) {
     const buttons = document.querySelectorAll('.btn');
