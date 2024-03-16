@@ -1,0 +1,276 @@
+* {
+          margin: 0px;
+          padding: 0px;
+        }
+        
+        .align-items{
+          align-items: center;
+        }
+        .flex-direction{
+          flex-direction: column;
+        }
+        /* ////////////////////////////////// 4 CONTENITORI PADRI ////////////////////////////////////*/
+        
+        .due,
+        .tre,
+        .quattro {
+          
+          width: 100%;
+        }
+
+        .due {
+          height: 584px;
+        }
+        .tre {
+          position: relative;
+          height: 500px;
+        }
+        .quattro {
+          height: 539px;
+        }
+        /* ////////////////////////////////// 4 CONTENITORI FIGLI /////////////////////////////////// */
+        .container-1 {
+          
+          border:1px solid #b8add24a;
+          /* border-radius: 72px;
+    border-top-left-radius: 72px;
+    border-top-right-radius: 72px;
+    border-bottom-right-radius: 72px;
+     */
+        }
+        .container-2 {
+          width: 100%;
+          height: 488px;
+          
+        }
+        .container-3 {
+          position: absolute;
+          width: 936px;
+          height: 400px;
+          z-index: 1;
+          border: none;
+        }
+        .container-4 {
+          width: 1197px;
+          height: 451px;
+          border: none;
+        }
+        /* ///////////////////////////////// CONTENUTO CONTENITORE 1 /////////////////////////////////*/
+        /* -------------------------------------------------------------------------------- DIV 1 --- */
+        /* -------------------------------------------------------------------------------- DIV 2 --- */
+       
+        .card-1 {                             /* --- DIV CARTA 1 --- */
+          /* justify-content: flex-end; */
+          /* width: 340px;
+          height: 340px; */
+          /* border-radius: 32px;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+    border-bottom-right-radius: 32px; */
+
+        }
+        .card-uno {     
+          border-color: transparent;                        
+          width: 277px;
+          height: 285px;
+        }
+        .card-2 {                              /* --- DIV CARTA 2 --- */
+          width: 340px;
+          height: 345px;
+          border-radius: 32px;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+    border-bottom-right-radius: 32px;
+        }
+        .swipe-card1{
+          width: 340px;
+          height: 345px;
+          border-radius: 32px;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+    border-bottom-right-radius: 32px;
+    padding: 24px;
+    padding-top: 24px;
+    padding-right: 24px;
+    padding-bottom: 24px;
+        }
+        /* -------------------------------------------------------------------------------- DIV 3 --- */
+        .icons-0 {                              
+          padding: 15px;
+          gap: 14px;
+          width: 854px;
+          height: 48px;
+        }
+        .icons-0 .ico {                         /* ----- ICONE ----- */
+          width: 48px;
+          height: 48px;
+        }
+        /* ////////////////////////////////// CONTENUTO CONTENITORE 2 /////////////////////////////// */
+        /* -------------------------------------------------------------------------------- DIV 1 --- */
+        .h3 {                            
+          height: 60px;
+          width: 1245px;
+        }
+        /* -------------------------------------------------------------------------------- DIV 2 --- */
+        .but-contain {
+          width: 1245px;
+          height: 392px;
+        }
+        .but-slide {                     /* ----- DIV (DIV BOTTONI, DIV CARTE ----- */
+          width: 32px;
+          height: 392px;
+        }
+        .but-round {                         /* ----- BOTTONE SLIDE X2 ----- */
+          border:1px solid #1fc7d4;  
+          color: #1fc7d4;                   
+          border-radius: 50%;
+          width: 32px;
+          height: 32px;
+          
+        }
+        .slide-card {                             /* ----- DIV CARTE ----- */
+          width: 1288px;
+          height: 392px;
+          padding: 7px;
+          overflow: hidden;                  
+          gap: 7px;
+          white-space: nowrap;
+    border-radius: 24px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    padding-bottom: 5px;
+        }
+        .card {
+          width: 280px;
+          height: 387px;
+          border-radius: 24px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    border-bottom:1px solid #535a5a;
+        }
+        .img-card-slide{
+          width:280px;
+          height:200px;
+          
+        }
+        .description-card{
+          width:280px;
+          height:187px;
+          padding:20px;
+        }
+        /* /////////////////////////////////// CONTENUTO CONTENITORE 3 ////////////////////////////// */
+        .h3-cont{
+          width: 700px;
+          height: 66px;
+          margin-bottom: 24px;
+          border:none;
+        }
+        .button-3 {
+          margin-top: 24px;
+          width: 165px;
+          height: 48px;
+          border-radius: 16px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+        }
+        /* //////////////////////////////////// CONTENUTO CONTENITORE 4 ///////////////////////////// */
+        /* -------------------------------------------------------------------------------- DIV 1 --- */
+        .container-li{
+          height: 280px;
+          border: none;
+        }
+        .li-a{                                        /* ----- DIV <A> X5 ----- */
+          height: 280px;
+          padding-right: 0px;
+          border: none;
+        }
+        .li-a2{                                        /* ----- DIV <A> X4 ----- */
+          padding-right: 0px;
+          gap: 12px;
+          border: none;
+        }
+        /* -------------------------------------------------------------------------------- DIV 2 --- */
+        .icons{
+          height: 55px;
+          gap: 25px;
+          border: none;
+          border-bottom: 1px solid #b8add2;
+        }   
+        .ico{                                             /* ----- ICONE ----- */
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          border: none;
+        }
+        /* -------------------------------------------------------------------------------- DIV 3 --- */
+        .endbar{
+          height: 48px;
+          justify-content: space-between;
+          border: none;
+        }
+        .end-1 {                                         /* ----- DIV SINISTRA ----- */
+          width: 156.44px;
+          height: 48px;
+          border: none;
+        }
+        .end-inp {     
+          border: none;                              /* ----- ELEMENTO 1 DIV SINISTRA ----- */
+          width: 56px;
+          height: 32px;
+          border-radius: 24px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    border-bottom-left-radius: 24px;
+    background-color: #b8add2;
+        }
+        .end-but {                                   /* ----- ELEMENTO 2 DIV SINISTRA ----- */
+          width: 100.44px;
+          height: 48px;
+          border: none;
+          background-color: transparent;
+        }
+        .en {                                       
+          width: 20.44px;
+          height: 24px;
+          border: none;
+        }
+        .end-2 {                                            /* ----- DIV DESTRA ----- */
+          width: 232.58px;
+          height: 48px;
+          gap: 6px;
+          border: none;
+        }
+        .a-end {                                       /* ----- ELEMENTO 1 DIV DESTRA ----- */
+          width: 76px;
+          height: 24px;
+        }
+        .svg-end {
+          border-radius: 50%;
+          width: 24px;
+          height: 24px;
+        }
+        .div-end {
+          width: 43.59px;
+          height: 24px;
+          border: none;
+        }
+        .end-a {                                       /* ----- ELEMENTO 2 DIV SINISTRA ----- */
+          border: 1px solid black;
+          width: 136.79px;
+          height: 32px;
+           border-radius: 16px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+        }
+        .svg-3{
+          width: 100%;
+          height: 100%;
+          position: absolute;
+        }
