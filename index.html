@@ -72,7 +72,7 @@
             firstBanner: "url('../assets/img/background-image.jpg')",
             secondBanner: "url('../assets/img/2banner.png')",
             thirdBanner: "url('../assets/img/3banner.png')",
-            fourthBanner: "url('../assets/img/purple-blur-1.jpg')",
+            fourthBanner: "url('../assets/img/block.png')",
             fifthBanner: "url('../assets/img/banner5.png')",
             sixthBanner: "url('../assets/img/6banner.png')",
             float1: "url('https://assets.pancakeswap.finance/web/banners/nemesis-downfall/bg-desktop.png')",
@@ -770,10 +770,10 @@
           <div class="text-[16px] text-white">
             <p class=" font-normal">Dark mode</p>
           </div>
-          <div class="relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer">
-            <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute">
+          <div class="group relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer transition-all ease-in-out delay-75 " id="bgbtn">
+            <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute z-20" onclick="toggleButtonsOne()" />
             <div
-              class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75">
+              class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] group-hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75" id="fbtn">
             </div>
           </div>
         </div>
@@ -793,10 +793,10 @@
                 is delayed</div>
             </div>
           </div>
-          <div class="relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer">
-            <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute">
+          <div class="group relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer transition-all ease-in-out delay-75 " id="bgbtn2">
+            <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute z-20"  onclick="toggleButtonsTwo()">
             <div
-              class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75">
+              class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] group-hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75" id="sbtn">
             </div>
           </div>
         </div>
@@ -815,10 +815,10 @@
                 Shows username of wallet instead of bunnies</div>
             </div>
           </div>
-          <div class="relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer">
-            <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute">
+          <div class="group relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer transition-all ease-in-out delay-75 " id="bgbtn3">
+            <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute z-20"  onclick="toggleButtonsThree()">
             <div
-              class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75">
+              class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] group-hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75" id="tbtn">
             </div>
           </div>
         </div>
@@ -839,19 +839,19 @@
             </div>
             <p class="text-[#31d0aa] border-2 ml-2 px-1 border-[#31d0aa] rounded-[24px]">BETA</p>
           </div>
-          <div class="relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer">
-            <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute">
+          <div class="group relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer transition-all ease-in-out delay-75 " id="bgbtn4">
+            <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute z-20"  onclick="toggleButtonsFour()">
             <div
-              class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75">
+              class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] group-hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75" id="qbtn">
             </div>
           </div>
         </div>
         <div class="flex justify-between h-[32px] mb-[22px]">
           <div class="text-[16px] text-white">Show testnet</div>
-          <div class="relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer">
-            <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute">
+          <div class="group relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer transition-all ease-in-out delay-75 " id="bgbtn5">
+            <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute z-20"  onclick="toggleButtonsFive()">
             <div
-              class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75">
+              class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] group-hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75" id="gbtn">
             </div>
           </div>
         </div>
@@ -876,10 +876,10 @@
               </div>
             </div>
           </div>
-          <div class="relative h-[32px] w-[56px] bg-[#372f47] rounded-[24px] cursor-pointer">
-            <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute">
+          <div class="group relative h-[32px] w-[56px] bg-[#372f47] transition-all ease-in-out delay-75 rounded-[24px] cursor-pointer" id="bgbtn6">
+            <input type="checkbox" class="w-full h-full opacity-0 cursor-pointer absolute z-20"  onclick="toggleButtonsSix()">
             <div
-              class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75">
+              class="absolute h-[26px] w-[26px] bg-bgFooterNav rounded-[50%] top-[3px] z-10 left-[3px] group-hover:border-[3px] outline-[3px] border-purple-700 transition-colors ease-in-out delay-75" id="hbtn">
             </div>
           </div>
         </div>
@@ -920,10 +920,12 @@
     </div>
   </div>
 
+  <!-- CONNECTING MENU -->
+
   <div onclick="toggleConnect()" id="connect"
-    class="w-[100vw] h-[100vh] fixed bg-bgSettings hidden justify-center items-center animate__animated animate__fadeIn z-40">
+    class="w-[100vw] h-[100vh] fixed bg-bgSettings hidden justify-center items-center animate__animated animate__fadeIn z-[150]">
     <div onclick="handleInnerClick(event)"
-      class="w-[792px] h-[490px] bg-gradient-to-b from-[#3b3e52] to-[#3b3247] rounded-[24px] z-50 flex relative">
+      class="w-[792px] h-[490px] bg-gradient-to-b from-[#3b3e52] to-[#3b3247] rounded-[24px] z-40 flex relative">
       <div class="absolute -top-8 px-[12px] -z-10">
         <button id="ct1" onclick=" toggleConnects('ct1')"
           class="connect font-semibold rounded-t-xl p-[8px] bg-[#372f47] text-[#b8add2]">Connect Wallet</button>
@@ -1045,20 +1047,15 @@
           <div class="flex flex-col gap-[14px]">
             <div class="flex gap-[8px]"><img width="20px" src="../assets/img/pancakeswap-logo.png" alt=""
                 class="h-[20px]">
-              <p class="text-[16px] font-semibold text-colorWhite" id="logoTitle">PancakeSwap</p><img id="secLogo" class="w-[98px] h-[20px]"
+              <p class="animate__fadeIn text-[16px] font-semibold text-colorWhite" id="logoTitle">PancakeSwap</p><img id="secLogo" class="w-[98px] h-[20px]"
                 src="../assets/img/nemesis.png" alt="">
             </div>
-            <div class="flex gap-[4px]">
-              <h3 class=" text-shadow text-[28px] font-semibold leading-[30px]" id="description">Nemesis Downfall Now Live on PancakeSwap
+            <div class="flex flex-col gap-[4px]">
+              <h3 class=" text-shadow text-[30px] font-extrabold leading-[30px]" id="description">Nemesis Downfall Now Live on PancakeSwap
                 Gaming Marketplace</h3>
+                <h3 class="text-shadow text-[28px] font-extrabold leading-[30px]" id="description2"></h3>
             </div>
-            <div class="flex items-center gap-[8px]"><button id="mbb" class="justify-center items-center rounded-[16px] flex gap-2 text-[16px] font-semibold text-colorWhite px-[24px] h-[48px]">Play Now <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                  height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd"
-                    d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5" />
-                  <path fill-rule="evenodd"
-                    d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z" />
-                </svg></button>
+            <div class="flex items-center gap-[8px]"><button id="mbb" class="justify-center items-center rounded-[16px] flex gap-2 text-[16px] font-semibold text-colorWhite px-[24px] h-[48px]">Play Now</button>
                 <a href="" class="text-[16px] text-colorWhite font-semibold" id="link">Learn More</a>
               </div>
           </div>
@@ -1069,8 +1066,8 @@
           <button class="btnSlider animate__animated animate__fadeInRight">prova</button> -->
         </div>
         <div class="w-[50%] relative">
-          <div class="w-[99px] h-[99px] absolute top-[-20px] left-[10%] animate-custom-bounce">
-          <img class="w-[99px] h-[99px]" src="https://assets.pancakeswap.finance/web/banners/nemesis-downfall/floating-item.png" alt="">
+          <div class="w-auto h-auto absolute top-[-20px] left-[10%] animate-custom-bounce">
+          <img id="floatingImg" class="w-[99px] h-auto" src="https://assets.pancakeswap.finance/web/banners/nemesis-downfall/floating-item.png" alt="">
         </div>
           <img class="w-auto h-[224px] absolute bottom-0 left-[12%]" id="imgRight" src="https://assets.pancakeswap.finance/web/banners/nemesis-downfall/bg-desktop.png" alt="">
         </div>
@@ -3110,7 +3107,7 @@
         <div class="container-3 flex align-items flex-direction justify-center font-display">
 
           <div class="h3-cont flex align-items justify-between text-title40"><b>Join Everyone's Favorite DEX Now !</b></div>
-          <button class="button-3 bg-colorsPrimary text-title16"><b>Connect Wallet</b></button>
+          <button class="button-3 bg-colorsPrimary text-title16 cursor-pointer font-semibold" onclick="toggleConnect()">Connect Wallet</button>
 
         </div>
 
