@@ -67,7 +67,7 @@
     <style>
         .coin-content {
             background: rgb(71, 28, 130);
-            background: radial-gradient(circle, rgba(71, 28, 130, 1) 0%, rgba(0, 0, 0, 1) 55%, rgba(0, 0, 0, 1) 100%);
+            background: radial-gradient(circle, rgba(71, 28, 130, 1) 0%, #08060B 45%, #08060B 100%);
 
         }
 
@@ -87,9 +87,10 @@
             border-radius: 10px;
         }
 
+
         .element {
             position: absolute;
-            animation: primary 7s linear infinite;
+            animation: primary 4s linear infinite;
         }
 
         .scroll-parent {
@@ -112,11 +113,11 @@
 
 <body>
     <svg viewBox="0 0 1660 48" preserveAspectRatio="none" color="text" width="20px" xmlns="http://www.w3.org/2000/svg"
-        class="bg-black fill-[#201335] w-full">
+        class="bg-[#08060B] fill-[#201335] w-full">
         <path d="M1660 48C1139.02 46.1887 336.256 15.2453 0 0H1660V48Z"></path>
     </svg>
 
-    <div class="flex justify-center items-center bg-black w-full py-[48px]">
+    <div class="flex justify-center items-center bg-[#08060B] w-full py-[48px]">
         <div class="flex justify-center items-center px-[16px]">
             <div class="flex flex-col justify-center items-center max-w-[1168px]">
                 <svg class="sc-grXZZQ hGmpbc" viewBox="0 0 48 48" height="48px" width="48px" mb="24px" color="text"
@@ -177,7 +178,7 @@
 
                                 <div data-key="liquidity"
                                     class="content cursor-pointer flex flex-col flex-1 justify-between p-[12px] group">
-                                    <!-- sistemato il responsive doppia icona (aggiungerlo agli altri)-->
+
                                     <img src="../assets/img/trade-liquidity.png" width="108" height="108" alt=""
                                         class="liquidity default opacity-0 group-hover:opacity-100 transition-all ease-in-out delay-200">
                                     <img src="../assets/img/trade-liquidity-purple.png" width="108" height="108" alt=""
@@ -549,8 +550,8 @@
         </div>
     </div>
 
-    <div class="flex justify-center items-center w-full bg-black py-[48px]">
-        <div class="flex flex-col justify-center items-center px-[16px] max-w-full">
+    <div class="flex justify-center items-center w-full bg-[#08060B] py-[48px]">
+        <div class="flex flex-col justify-center items-center px-[16px] max-w-full coin-content">
             <div class="flex flex-col justify-center items-center max-w-[990px] gap-y-8 ">
                 <div class="text-[#F4EEFF] font-extrabold text-title40">Unlock the Full Potential of DeFi with <span
                         class="text-colorsSecondary">CAKE</span></div>
@@ -564,10 +565,10 @@
                     within the PancakeSwap ecosystem</div>
                 <div class="flex gap-x-[14px]">
                     <a href="#"><button
-                            class="bg-colorsPrimary font-bold text-[16px] px-[24px] h-[48px] rounded-2xl hover:bg-[#17848E] transition-all ease-in-out delay-100">Buy
+                            class="bg-colorsPrimary font-bold text-[16px] px-[24px] h-[48px] rounded-[20px] hover:bg-[#17848E] transition-all ease-in-out delay-100">Buy
                             CAKE</button></a>
                     <a href="#" class=""></a><button
-                        class="text-colorsPrimary text-[16px] font-bold rounded-2xl h-[48px pr-[24px] flex items-center hover:underline group hover:text-[#17848E] transition-all ease-in-out delay-100">Learn<svg
+                        class="text-colorsPrimary text-[16px] font-bold rounded-[20px] h-[48px pr-[24px] flex items-center hover:underline group hover:text-[#17848E] transition-all ease-in-out delay-100">Learn<svg
                             viewBox="0 0 24 24" color="primary" ml="0.5rem" width="20px"
                             xmlns="http://www.w3.org/2000/svg"
                             class="ml-[0.5rem] fill-colorsPrimary group-hover:fill-[#17848E] transition-all ease-in-out delay-100">
@@ -576,15 +577,15 @@
                             </path>
                         </svg></button></a>
                 </div>
-                <div class="flex coin-content">
-                    <div class="py-[24px] px-[36px]">
+                <div class="flex h-[500px]">
+                    <div class="py-[24px] px-[36px] z-20">
                         <div class="mt-[118px]">
                             <div class="text-white text-[35px] font-extrabold mb-[20px]">Ecosystem</div>
 
                             <div class="scroll-parent h-[200px] no-scrollbar">
                                 <div class="element">
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-semibold shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-semibold shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 24 24" color="" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-[#a881fc] mr-[3px]">
                                             <path
@@ -596,7 +597,7 @@
                                         </svg>Staking
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 15 15" color="" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-[#a881fc] mr-[3px]">
                                             <path
@@ -608,7 +609,7 @@
                                         </svg>Farm Booster
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 24 24" color="#A881FC" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-[#a881fc] mr-[3px]">
                                             <mask id="mask0_2011_82729" maskUnits="userSpaceOnUse" x="0" y="0"
@@ -623,7 +624,7 @@
                                         </svg>Revenue Sharing
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 24 24" color="#A881FC" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-[#a881fc] mr-[3px]">
                                             <mask id="mask0_2011_82726" maskUnits="userSpaceOnUse" x="0" y="0"
@@ -638,7 +639,7 @@
                                         </svg>Gauges Voting
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 21 18" color="#A881FC" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-[#a881fc] mr-[3px]">
                                             <path
@@ -647,7 +648,7 @@
                                         </svg>IFO
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 25 24" color="#A881FC" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-[#a881fc] mr-[3px]">
                                             <g clip-path="url(#clip0_1056_26996)">
@@ -663,7 +664,7 @@
                                         </svg>Governance
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 19 17" color="#A881FC" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-[#a881fc] mr-[3px]">
                                             <path
@@ -672,7 +673,7 @@
                                         </svg>Game
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 24 24" color="#A881FC" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-[#a881fc] mr-[3px]">
                                             <g clip-path="url(#clip0_94_13038)">
@@ -688,7 +689,7 @@
                                         </svg>Liquidity Provision
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 24 24" color="#A881FC" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-[#a881fc] mr-[3px]">
                                             <path
@@ -697,7 +698,7 @@
                                         </svg>NFT
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 24 24" color="#A881FC" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-[#a881fc] mr-[3px]">
                                             <path
@@ -712,7 +713,7 @@
                                         </svg>Trade
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 24 24" color="#A881FC" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-[#a881fc] mr-[3px]">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -738,7 +739,7 @@
                                 </div>
                                 <div class="element">
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-semibold shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-semibold shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 24 24" color="" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-[#a881fc] mr-[3px]">
                                             <path
@@ -750,7 +751,7 @@
                                         </svg>Staking
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 15 15" color="" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-[#a881fc] mr-[3px]">
                                             <path
@@ -762,7 +763,7 @@
                                         </svg>Farm Booster
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 24 24" color="#A881FC" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-[#a881fc] mr-[3px]">
                                             <mask id="mask0_2011_82729" maskUnits="userSpaceOnUse" x="0" y="0"
@@ -777,7 +778,7 @@
                                         </svg>Revenue Sharing
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 24 24" color="#A881FC" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-[#a881fc] mr-[3px]">
                                             <mask id="mask0_2011_82726" maskUnits="userSpaceOnUse" x="0" y="0"
@@ -792,7 +793,7 @@
                                         </svg>Gauges Voting
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 21 18" color="#A881FC" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-[#a881fc] mr-[3px]">
                                             <path
@@ -801,7 +802,7 @@
                                         </svg>IFO
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 25 24" color="#A881FC" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-[#a881fc] mr-[3px]">
                                             <g clip-path="url(#clip0_1056_26996)">
@@ -817,7 +818,7 @@
                                         </svg>Governance
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 19 17" color="#A881FC" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-[#a881fc] mr-[3px]">
                                             <path
@@ -826,7 +827,7 @@
                                         </svg>Game
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 24 24" color="#A881FC" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-[#a881fc] mr-[3px]">
                                             <g clip-path="url(#clip0_94_13038)">
@@ -842,7 +843,7 @@
                                         </svg>Liquidity Provision
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 24 24" color="#A881FC" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-[#a881fc] mr-[3px]">
                                             <path
@@ -851,7 +852,7 @@
                                         </svg>NFT
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 24 24" color="#A881FC" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-[#a881fc] mr-[3px]">
                                             <path
@@ -866,7 +867,7 @@
                                         </svg>Trade
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 24 24" color="#A881FC" width="20px"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-[#a881fc] mr-[3px]">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -895,7 +896,7 @@
                         </div>
                     </div>
                     <div>
-                        <img class="h-[600px]" src="../assets/img/download (1).png" alt="coin">
+                        <img class="" src="../assets/img/download (1).png" alt="coin">
                     </div>
                     <div class="py-[24px] px-[36px]">
                         <div class="">
@@ -903,7 +904,7 @@
                             <div class="scroll-parent h-[200px] no-scrollbar">
                                 <div class="element">
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-semibold shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-semibold shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 21 20" color="white" width="21"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-white">
                                             <path
@@ -912,13 +913,13 @@
                                         </svg>Ledger
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <img alt="mobox-logo" loading="lazy" width="24" height="14" decoding="async"
                                             data-nimg="1" src="https://assets.pancakeswap.finance/web/landing/mobox.png"
                                             style="color: transparent;">Mobox
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 20 20" color="white" width="20"
                                             xmlns="http://www.w3.org/2000/svg" class="">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -934,7 +935,7 @@
                                         </svg>ApolloX
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 20 24" color="white" width="20"
                                             xmlns="http://www.w3.org/2000/svg" class="sc-grXZZQ gSrnpz">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -994,7 +995,7 @@
                                         </svg>Alpaca Finance
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 20 20" color="white" width="20"
                                             xmlns="http://www.w3.org/2000/svg" class="sc-grXZZQ gSrnpz">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -1010,7 +1011,7 @@
                                         </svg>Venus
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 22 20" color="white" width="20"
                                             xmlns="http://www.w3.org/2000/svg" class="sc-grXZZQ gSrnpz">
                                             <path d="M20.0107 0.5L12.1979 6.43757L13.6507 2.93837L20.0107 0.5Z"
@@ -1122,7 +1123,7 @@
                                         </svg>Metamax
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-semibold shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-semibold shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 21 20" color="white" width="21"
                                             xmlns="http://www.w3.org/2000/svg" class="fill-white">
                                             <path
@@ -1131,13 +1132,13 @@
                                         </svg>Ledger
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <img alt="mobox-logo" loading="lazy" width="24" height="14" decoding="async"
                                             data-nimg="1" src="https://assets.pancakeswap.finance/web/landing/mobox.png"
                                             style="color: transparent;">Mobox
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 20 20" color="white" width="20"
                                             xmlns="http://www.w3.org/2000/svg" class="">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -1153,7 +1154,7 @@
                                         </svg>ApolloX
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 20 24" color="white" width="20"
                                             xmlns="http://www.w3.org/2000/svg" class="sc-grXZZQ gSrnpz">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -1213,7 +1214,7 @@
                                         </svg>Alpaca Finance
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 20 20" color="white" width="20"
                                             xmlns="http://www.w3.org/2000/svg" class="sc-grXZZQ gSrnpz">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -1229,7 +1230,7 @@
                                         </svg>Venus
                                     </div>
                                     <div
-                                        class="flex text-white bg-[#27262c] rounded-2xl text-[13px] p-[5px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
+                                        class="flex text-white bg-[#27262c] rounded-[20px] text-[15px] p-[10px] font-medium shadow-sm shadow-[#383241] border border-[#383241] mb-[10px] w-fit">
                                         <svg viewBox="0 0 22 20" color="white" width="20"
                                             xmlns="http://www.w3.org/2000/svg" class="sc-grXZZQ gSrnpz">
                                             <path d="M20.0107 0.5L12.1979 6.43757L13.6507 2.93837L20.0107 0.5Z"
@@ -1375,12 +1376,12 @@
         </div>
     </div>
     <svg viewBox="0 0 1660 48" preserveAspectRatio="none" color="text" width="20px" xmlns="http://www.w3.org/2000/svg"
-        class=" bg-black fill-[#0B4576] w-full">
+        class=" bg-[#08060B] fill-[#0B4576] w-full">
         <path d="M0 0C520.985 1.81132 1323.74 32.7547 1660 48H0V0Z"></path>
     </svg>
     <div class="fixed right-[18px] bottom-[118px]">
         <button onclick="buttonTop()" id="topBtn"
-            class="items-center rounded-2xl cursor-pointer flex justify-center px-[24px] bg-colorsPrimary w-[48px] h-[48px] hover:bg-[#17848E]">
+            class="items-center rounded-[20px] cursor-pointer flex justify-center px-[24px] bg-colorsPrimary w-[48px] h-[48px] hover:bg-[#17848E]">
             <svg viewBox="0 0 24 24" color="" ml="0.5rem" width="20px" xmlns="http://www.w3.org/2000/svg"
                 class="fill-black shrink-0">
                 <path
